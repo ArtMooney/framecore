@@ -1,0 +1,28 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "text": [
+        {
+          "type": "paragraph",
+          "text": "Veniam ullamco duis in cupidatat ad ipsum cupidatat sint amet cupidatat.",
+          "spans": []
+        }
+      ],
+      "image": {
+        "dimensions": {
+          "width": 900,
+          "height": 500
+        },
+        "alt": null,
+        "copyright": null,
+        "url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f"
+      }
+    },
+    "slice_type": "text_with_image"
+  }
+]

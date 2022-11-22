@@ -1,0 +1,36 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {
+        "featureDescription": [
+          {
+            "type": "paragraph",
+            "text": "Enim minim velit dolore magna minim in adipisicing in aute fugiat nostrud id incididunt sit.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "primary": {
+      "icon": {
+        "dimensions": {
+          "width": 900,
+          "height": 500
+        },
+        "alt": null,
+        "copyright": null,
+        "url": "https://images.unsplash.com/photo-1560762484-813fc97650a0"
+      },
+      "text": [
+        {
+          "type": "paragraph",
+          "text": "Deserunt minim amet magna tempor ullamco ut dolore ipsum voluptate in ipsum laborum. Exercitation nisi ad ea aliquip. Ipsum commodo nulla id ad laborum fugiat nostrud eiusmod officia.",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "text_with_features"
+  }
+]
