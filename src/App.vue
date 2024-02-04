@@ -1,5 +1,5 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from "./components/HelloWorld.vue";
 </script>
 
 <template>
@@ -12,7 +12,27 @@ import HelloWorld from './components/HelloWorld.vue'
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
+  <div>{{ message }}</div>
 </template>
+
+<script>
+export default {
+  name: "Framecore",
+
+  data() {
+    return {
+      message: "HEJ",
+    };
+  },
+
+  async mounted() {
+    const res = await fetch(`/helloworld`);
+    const data = await res.text();
+
+    console.log("HEJ", data);
+  },
+};
+</script>
 
 <style scoped>
 .logo {
