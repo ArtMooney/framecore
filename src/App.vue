@@ -26,7 +26,8 @@ export default {
   },
 
   async mounted() {
-    const res = await fetch(`/helloworld`);
+    // const res = await fetch(`/helloworld`);
+    const res = await fetch("/helloworld");
     const data = await res.text();
 
     console.log("HEJ", data);
