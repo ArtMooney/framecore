@@ -11,7 +11,8 @@ import HelloWorld from "./components/HelloWorld.vue";
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <!--  <HelloWorld msg="Vite + Vue" />-->
+
   <div>{{ message }}</div>
 </template>
 
@@ -21,16 +22,13 @@ export default {
 
   data() {
     return {
-      message: "HEJ",
+      message: "",
     };
   },
 
   async mounted() {
-    // const res = await fetch(`/helloworld`);
     const res = await fetch("/helloworld");
-    const data = await res.text();
-
-    console.log("HEJ", data);
+    this.message = await res.text();
   },
 };
 </script>
@@ -42,9 +40,11 @@ export default {
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
 }
