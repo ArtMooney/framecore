@@ -1,9 +1,7 @@
 # FrameCore
 
-run
-npm run build to create dist
+run for local development:
+wrangler pages dev -- npm run dev
 
-then run
-wrangler pages dev dist
-
+deployment:
 deploys via git
