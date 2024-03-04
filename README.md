@@ -1,4 +1,4 @@
-# FrameCore
+# FrameCore website
 
 run for local development:
 wrangler pages dev -- npm run dev
