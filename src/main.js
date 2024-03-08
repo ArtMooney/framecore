@@ -1,6 +1,7 @@
 import { createApp } from "vue";
-import "./normalize.css";
-import "./webflow.css";
+import "./css/normalize.css";
+import "./css/webflow.css";
+import "./css/framecore.webflow.css";
 // import "./framecore.webflow.css";
 import App from "./App.vue";
 import createRouter from "./routes";
