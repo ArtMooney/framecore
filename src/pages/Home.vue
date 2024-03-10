@@ -1,12 +1,13 @@
 <script setup>
 import Navbar from "../components/Navbar.vue";
+import Test from "../components/Test.vue";
 </script>
 
 <template>
-  <div>
-    <Navbar />
+  <div class="content-frame">
+    <!--    <Navbar />-->
+    <!--    <Test />-->
   </div>
-  <div class="content-frame"></div>
 </template>
 
 <script>
