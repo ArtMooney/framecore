@@ -163,6 +163,8 @@ label {
 blockquote {
   font-variation-settings: normal;
   border-left: 0.3rem solid rgba(255, 255, 255, 0.3);
+  align-self: center;
+  justify-self: center;
   margin-bottom: 1rem;
   padding: 1rem;
   font-family:
@@ -985,6 +987,16 @@ blockquote {
 }
 
 .content-info.padding {
+  grid-area: 1 / 2 / 2 / 3;
+  padding: 2rem;
+}
+
+.content-info._1-2 {
+  padding: 2rem;
+}
+
+.content-info.video-heading {
+  grid-area: 1 / 2 / 2 / 3;
   padding: 2rem;
 }
 
@@ -1433,6 +1445,12 @@ blockquote {
   left: -16%;
 }
 
+.html-embed {
+  grid-area: 1 / 1 / 2 / 4;
+  align-self: stretch;
+  justify-self: stretch;
+}
+
 @media screen and (max-width: 991px) {
   h1 {
     font-size: 3rem;
@@ -1863,7 +1881,9 @@ blockquote {
     padding-bottom: 1rem;
   }
 
-  .content-info.padding {
+  .content-info.padding,
+  .content-info._1-2,
+  .content-info.video-heading {
     padding: 1rem;
   }
 
@@ -2057,6 +2077,11 @@ blockquote {
     width: 100%;
   }
 
+  .content-info.padding,
+  .content-info.video-heading {
+    grid-area: 2 / 1 / 2 / 4;
+  }
+
   .image.lightbox {
     max-width: 100%;
   }
@@ -2134,31 +2159,6 @@ blockquote {
 }
 
 #w-node-_4db7cc3f-3306-1a5a-cc2e-69bfa2546b8c-a2546b88 {
-  grid-area: 1 / 2 / 2 / 3;
-}
-
-#w-node-_9a3ed66b-78a9-8bd6-dec6-5ee2764da7d3-764da7d2 {
-  grid-area: span 1 / span 1 / span 1 / span 1;
-  align-self: center;
-  justify-self: center;
-}
-
-#w-node-f9b6093a-017e-c8cf-00a1-d385ee6e7343-ee6e7342 {
-  align-self: center;
-  justify-self: center;
-}
-
-#w-node-_0a30aa2c-4f71-0af2-6db7-d2f0d4eda9b7-d4eda9b6 {
-  grid-area: 1 / 1 / 2 / 4;
-  align-self: stretch;
-  justify-self: stretch;
-}
-
-#w-node-_0a30aa2c-4f71-0af2-6db7-d2f0d4eda9b8-d4eda9b6 {
-  grid-area: span 1 / span 1 / span 1 / span 1;
-}
-
-#w-node-_0a30aa2c-4f71-0af2-6db7-d2f0d4eda9b9-d4eda9b6 {
   grid-area: 1 / 2 / 2 / 3;
 }
 
@@ -2616,12 +2616,6 @@ blockquote {
     grid-area: 2 / 1 / 2 / 2;
   }
 
-  #w-node-_0a30aa2c-4f71-0af2-6db7-d2f0d4eda9b7-d4eda9b6 {
-    grid-area: 1 / 1 / 2 / 4;
-    align-self: stretch;
-    justify-self: stretch;
-  }
-
   #w-node-de0b2fc4-417c-7050-ba42-89d526a5e31d-40f79664 {
     grid-column: span 4 / span 4;
   }
@@ -2686,11 +2680,6 @@ blockquote {
 
   #w-node-_4db7cc3f-3306-1a5a-cc2e-69bfa2546b8c-a2546b88 {
     grid-area: 1 / 2 / 2 / 3;
-  }
-
-  #w-node-_0a30aa2c-4f71-0af2-6db7-d2f0d4eda9b7-d4eda9b6,
-  #w-node-_0a30aa2c-4f71-0af2-6db7-d2f0d4eda9b9-d4eda9b6 {
-    grid-area: span 1 / span 3 / span 1 / span 3;
   }
 
   #w-node-c29e956b-c0f7-6d24-d53d-0df21ad03e41-40f79664 {

@@ -35,35 +35,6 @@ import ArrowUp from "../assets/ArrowUp.vue";
 <script>
 export default {
   name: "Footer",
-
-  data() {
-    return {
-      mobileMenu: window.innerWidth > 991 ? true : false,
-      screenWidth: window.innerWidth,
-    };
-  },
-
-  created() {
-    window.addEventListener("resize", this.updateScreenWidth);
-  },
-
-  destroyed() {
-    window.removeEventListener("resize", this.updateScreenWidth);
-  },
-
-  methods: {
-    updateScreenWidth() {
-      this.screenWidth = window.innerWidth;
-    },
-  },
-
-  watch: {
-    screenWidth() {
-      if (this.screenWidth > 991) {
-        this.mobileMenu = true;
-      }
-    },
-  },
 };
 </script>
 

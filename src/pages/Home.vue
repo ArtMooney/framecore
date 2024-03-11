@@ -1,13 +1,12 @@
 <script setup>
+import Animations from "../components/Animations.vue";
 import Footer from "../components/Footer.vue";
 import Test from "../components/Test.vue";
 </script>
 
 <template>
-  <div class="content-frame">
-    <Footer />
-    <!--    <Test />-->
-  </div>
+  <Animations />
+  <Footer />
 </template>
 
 <script>

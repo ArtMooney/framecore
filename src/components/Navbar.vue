@@ -84,6 +84,8 @@ export default {
     screenWidth() {
       if (this.screenWidth > 991) {
         this.mobileMenu = true;
+      } else {
+        this.mobileMenu = false;
       }
     },
   },
@@ -98,8 +100,9 @@ export default {
 .navbar-links-enter-active,
 .navbar-links-leave-active {
   transition:
-    transform 0.5s ease,
-    opacity 0.5s ease;
+    transform 0.3s ease,
+    opacity 0.3s ease;
+  display: grid;
 }
 
 .navbar-links-enter-from,
