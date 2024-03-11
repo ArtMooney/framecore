@@ -48,17 +48,7 @@ import sandwich from "../assets/burger-menu.json";
 
 <script>
 export default {
-  name: "Home",
-  metaInfo: {
-    title: "Home",
-    meta: [
-      {
-        name: "description",
-        content: "Welcome to Framecore!",
-      },
-      // Add more meta tags as needed
-    ],
-  },
+  name: "Navbar",
 
   data() {
     return {

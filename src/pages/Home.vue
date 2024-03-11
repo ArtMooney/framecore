@@ -1,11 +1,11 @@
 <script setup>
-import Navbar from "../components/Navbar.vue";
+import Footer from "../components/Footer.vue";
 import Test from "../components/Test.vue";
 </script>
 
 <template>
   <div class="content-frame">
-    <!--    <Navbar />-->
+    <Footer />
     <!--    <Test />-->
   </div>
 </template>
