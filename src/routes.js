@@ -10,9 +10,14 @@ export default () =>
         component: () => import("./pages/Home.vue"),
       },
       {
-        path: "/hello-world",
-        name: "HelloWorld",
-        component: () => import("./components/HelloWorld.vue"),
+        path: "/case",
+        name: "Case",
+        component: () => import("./components/Animations.vue"),
+      },
+      {
+        path: "/kontakt",
+        name: "Kontakt",
+        component: () => import("./components/Commercials.vue"),
       },
     ],
   });

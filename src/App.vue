@@ -31,7 +31,11 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+body {
+  background-color: black;
+}
+
 .content-frame {
   width: 100%;
   max-width: 90rem;

@@ -13,7 +13,6 @@ dist-ssr
 *.local
 .wrangler
 .webflowrc.cjs
-devlink
 
 # Editor directories and files
 .vscode/*
@@ -26,3 +25,4 @@ devlink
 *.sln
 *.sw?
 .gitignore
+.env
