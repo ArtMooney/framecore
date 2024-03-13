@@ -30,3 +30,27 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.content-frame {
+  width: 100%;
+  max-width: 90rem;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  grid-auto-columns: 1fr;
+  grid-template-columns: minmax(12rem, 0.25fr) 1fr minmax(12rem, 0.25fr);
+  grid-template-rows: auto;
+}
+
+@media screen and (max-width: 479px) {
+  .content-frame {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+</style>

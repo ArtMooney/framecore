@@ -1,11 +1,11 @@
 <script setup>
-import Animations from "../components/Animations.vue";
+import Commercials from "../components/Commercials.vue";
 import Footer from "../components/Footer.vue";
 import Test from "../components/Test.vue";
 </script>
 
 <template>
-  <Animations />
+  <Commercials />
   <Footer />
 </template>
 
