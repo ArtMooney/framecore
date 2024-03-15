@@ -14,7 +14,7 @@ import loading from "../assets/loading.json";
       />
     </div>
 
-    <div class="gallery-lightbox" :style="{ display: displayGalleryLightbox }">
+    <div v-if="galleryLightbox" class="gallery-lightbox">
       <div class="image lightbox source-wrapper">
         <img v-if="imageOrVideo" class="image lightbox" :src="imageLightbox" />
         <div v-if="!imageOrVideo" class="image lightbox">
@@ -24,22 +24,18 @@ import loading from "../assets/loading.json";
         </div>
       </div>
       <div class="lightbox-arrow left">
-        <a href="#" class="icon-s solid arrowbutton" v-on:click="leftArrow"
-          ></a
-        >
+        <a href="#" class="icon-s solid arrowbutton" @click="leftArrow"></a>
       </div>
       <div class="lightbox-arrow right">
-        <a href="#" class="icon-s solid arrowbutton" v-on:click="rightArrow"
-          ></a
-        >
+        <a href="#" class="icon-s solid arrowbutton" @click="rightArrow"></a>
       </div>
       <div class="lightbox-close">
-        <a href="#" class="icon-m solid" v-on:click="galleryClose"></a>
+        <a href="#" class="icon-m solid" @click="galleryClose"></a>
       </div>
     </div>
 
     <div class="content gallery">
-      <div class="gallery-wrapper" :style="{ display: displayGallery }">
+      <div v-show="displayGallery" class="gallery-wrapper">
         <div class="gallery-item" v-for="(image, index) of images">
           <img
             :src="`https://filedn.com/lODGkE8bRyjVm8tpT986SXj/framecore/thumbs/${image.thumbname}?${getRandomNumber}`"
@@ -57,6 +53,8 @@ import loading from "../assets/loading.json";
 </template>
 
 <script>
+import Plyr from "plyr";
+
 export default {
   name: "Gallery",
 
@@ -64,8 +62,7 @@ export default {
     return {
       images: [],
       galleryLightbox: false,
-      displayGalleryLightbox: "none",
-      displayGallery: "none",
+      displayGallery: false,
       imageLightbox: "",
       galleryLoader: true,
       imageOrVideo: true,
@@ -76,10 +73,6 @@ export default {
 
   async created() {
     this.images = await this.getImageData;
-  },
-
-  mounted() {
-    // this.displayGalleryLightbox = "flex";
   },
 
   computed: {
@@ -154,10 +147,14 @@ export default {
     galleryItemLoaded(event) {
       this.loadedThumbs = this.loadedThumbs + 1;
       if (this.loadedThumbs === this.images.length) {
-        this.displayGallery = "block";
+        this.displayGallery = true;
         this.galleryLoader = false;
       }
     },
   },
 };
 </script>
+
+<style scoped>
+@import "https://cdn.plyr.io/3.7.8/plyr.css";
+</style>

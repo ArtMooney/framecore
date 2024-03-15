@@ -4344,7 +4344,7 @@ blockquote {
   bottom: 0%;
   z-index: 200;
 
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   grid-auto-columns: 1fr;
