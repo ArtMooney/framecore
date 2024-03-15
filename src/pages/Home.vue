@@ -1,10 +1,10 @@
 <script setup>
-import VideoHeading from "../components/VideoHeading.vue";
+import Gallery from "../components/Gallery.vue";
 import Footer from "../components/Footer.vue";
 </script>
 
 <template>
-  <VideoHeading />
+  <Gallery />
   <Footer />
 </template>
 
