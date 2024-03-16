@@ -27,13 +27,13 @@ import Xmark from "../assets/Xmark.vue";
         </div>
       </div>
       <div class="lightbox-arrow left">
-        <div class="gallery-arrow">
-          <ChevronLeft @click="leftArrow" />
+        <div class="gallery-arrow" @click="leftArrow">
+          <ChevronLeft />
         </div>
       </div>
       <div class="lightbox-arrow right">
-        <div class="gallery-arrow">
-          <ChevronRight @click="rightArrow" />
+        <div class="gallery-arrow" @click="rightArrow">
+          <ChevronRight />
         </div>
       </div>
       <div class="lightbox-close">
