@@ -1,14 +1,7 @@
 import React from "react";
 import * as _Builtin from "./_Builtin";
-import * as _interactions from "./interactions";
-
-const _interactionsData = JSON.parse(
-  '{"events":{"e-29":{"id":"e-29","name":"","animationType":"custom","eventTypeId":"MOUSE_CLICK","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-7","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-30"}},"mediaQueries":["main","medium","small","tiny"],"target":{"selector":".accordion-item-trigger","originalId":"63b97bda3d3d7a5c1c4a4f82|98c0cf8f-2e1b-48bc-88cf-cdfe19729e5e","appliesTo":"CLASS"},"targets":[{"selector":".accordion-item-trigger","originalId":"63b97bda3d3d7a5c1c4a4f82|98c0cf8f-2e1b-48bc-88cf-cdfe19729e5e","appliesTo":"CLASS"}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1555887741271},"e-30":{"id":"e-30","name":"","animationType":"custom","eventTypeId":"MOUSE_SECOND_CLICK","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-8","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-29"}},"mediaQueries":["main","medium","small","tiny"],"target":{"selector":".accordion-item-trigger","originalId":"63b97bda3d3d7a5c1c4a4f82|98c0cf8f-2e1b-48bc-88cf-cdfe19729e5e","appliesTo":"CLASS"},"targets":[{"selector":".accordion-item-trigger","originalId":"63b97bda3d3d7a5c1c4a4f82|98c0cf8f-2e1b-48bc-88cf-cdfe19729e5e","appliesTo":"CLASS"}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1555887741273}},"actionLists":{"a-7":{"id":"a-7","title":"accordion open","actionItemGroups":[{"actionItems":[{"id":"a-7-n","actionTypeId":"STYLE_SIZE","config":{"delay":0,"easing":"","duration":500,"target":{"useEventTarget":"SIBLINGS","selector":".accordion-item-content","selectorGuids":["1a8da2ac-08e5-fe02-93cf-3a20c3a3dabd"]},"heightValue":0,"widthUnit":"PX","heightUnit":"PX","locked":false}},{"id":"a-7-n-2","actionTypeId":"TRANSFORM_ROTATE","config":{"delay":0,"easing":"","duration":500,"target":{"useEventTarget":"CHILDREN","selector":".icon-s.solid","selectorGuids":["39b6b29e-81a3-b609-53be-ba0943b41606","f5923358-2484-5db1-60de-54a4e86f1f8f"]},"zValue":0,"xUnit":"DEG","yUnit":"DEG","zUnit":"DEG"}}]},{"actionItems":[{"id":"a-7-n-3","actionTypeId":"STYLE_SIZE","config":{"delay":0,"easing":"outQuad","duration":200,"target":{"useEventTarget":"SIBLINGS","selector":".accordion-item-content","selectorGuids":["1a8da2ac-08e5-fe02-93cf-3a20c3a3dabd"]},"widthUnit":"AUTO","heightUnit":"AUTO","locked":false}},{"id":"a-7-n-5","actionTypeId":"TRANSFORM_ROTATE","config":{"delay":0,"easing":"outQuad","duration":200,"target":{"useEventTarget":"CHILDREN","selector":".icon-s.solid","selectorGuids":["39b6b29e-81a3-b609-53be-ba0943b41606","f5923358-2484-5db1-60de-54a4e86f1f8f"]},"zValue":180,"xUnit":"DEG","yUnit":"DEG","zUnit":"DEG"}}]}],"useFirstGroupAsInitialState":true,"createdOn":1555887748956},"a-8":{"id":"a-8","title":"accordion close","actionItemGroups":[{"actionItems":[{"id":"a-8-n","actionTypeId":"STYLE_SIZE","config":{"delay":0,"easing":"inQuad","duration":200,"target":{"useEventTarget":"SIBLINGS","selector":".accordion-item-content","selectorGuids":["1a8da2ac-08e5-fe02-93cf-3a20c3a3dabd"]},"heightValue":0,"widthUnit":"AUTO","heightUnit":"PX","locked":false}},{"id":"a-8-n-3","actionTypeId":"TRANSFORM_ROTATE","config":{"delay":0,"easing":"inQuad","duration":200,"target":{"useEventTarget":"CHILDREN","selector":".icon-s.solid","selectorGuids":["39b6b29e-81a3-b609-53be-ba0943b41606","f5923358-2484-5db1-60de-54a4e86f1f8f"]},"zValue":0,"xUnit":"DEG","yUnit":"DEG","zUnit":"DEG"}}]}],"useFirstGroupAsInitialState":false,"createdOn":1555887963005}},"site":{"mediaQueries":[{"key":"main","min":992,"max":10000},{"key":"medium","min":768,"max":991},{"key":"small","min":480,"max":767},{"key":"tiny","min":0,"max":479}]}}'
-);
 
 export function Gallery({ as: _Component = _Builtin.Block }) {
-  _interactions.useInteractions(_interactionsData);
-
   return (
     <_Component className="gallery-app" tag="div" id="gallery-app">
       <_Builtin.Block
@@ -30,43 +23,25 @@ export function Gallery({ as: _Component = _Builtin.Block }) {
           value="%3Cimg%20%3Asrc%3D%22imageLightbox%22%20v-if%3D%22imageOrVideo%22%20class%3D%22image%20lightbox%22%20%2F%3E%0A%0A%3Cdiv%20v-if%3D%22!imageOrVideo%22%20class%3D%22image%20lightbox%22%3E%0A%20%20%3Cvideo%20ref%3D%22videoplayer%22%20muted%20playsinline%20autoplay%3E%0A%20%20%20%20%3Csource%20%3Asrc%3D%22imageLightbox%22%20%2F%3E%0A%20%20%3C%2Fvideo%3E%0A%3C%2Fdiv%3E"
         />
         <_Builtin.Block className="lightbox-arrow left" tag="div">
-          <_Builtin.Link
-            className="icon-s solid arrowbutton"
-            button={false}
+          <_Builtin.HtmlEmbed
+            className="gallery-arrow"
             v-on:click="leftArrow"
-            block=""
-            options={{
-              href: "#",
-            }}
-          >
-            {""}
-          </_Builtin.Link>
+            value="%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20512%22%3E%0A%20%20%20%20%3C!--!Font%20Awesome%20Free%206.5.1%20by%20%40fontawesome%20-%20https%3A%2F%2Ffontawesome.com%20License%20-%20https%3A%2F%2Ffontawesome.com%2Flicense%2Ffree%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%0A%20%20%20%20%3Cpath%0A%20%20%20%20%20%20fill%3D%22Currentcolor%22%0A%20%20%20%20%20%20d%3D%22M9.4%20233.4c-12.5%2012.5-12.5%2032.8%200%2045.3l192%20192c12.5%2012.5%2032.8%2012.5%2045.3%200s12.5-32.8%200-45.3L77.3%20256%20246.6%2086.6c12.5-12.5%2012.5-32.8%200-45.3s-32.8-12.5-45.3%200l-192%20192z%22%0A%20%20%20%20%2F%3E%0A%20%20%3C%2Fsvg%3E"
+          />
         </_Builtin.Block>
         <_Builtin.Block className="lightbox-arrow right" tag="div">
-          <_Builtin.Link
-            className="icon-s solid arrowbutton"
-            button={false}
+          <_Builtin.HtmlEmbed
+            className="gallery-arrow"
             v-on:click="rightArrow"
-            block=""
-            options={{
-              href: "#",
-            }}
-          >
-            {""}
-          </_Builtin.Link>
+            value="%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20512%22%3E%0A%20%20%20%20%3C!--!Font%20Awesome%20Free%206.5.1%20by%20%40fontawesome%20-%20https%3A%2F%2Ffontawesome.com%20License%20-%20https%3A%2F%2Ffontawesome.com%2Flicense%2Ffree%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%0A%20%20%20%20%3Cpath%0A%20%20%20%20%20%20fill%3D%22Currentcolor%22%0A%20%20%20%20%20%20d%3D%22M310.6%20233.4c12.5%2012.5%2012.5%2032.8%200%2045.3l-192%20192c-12.5%2012.5-32.8%2012.5-45.3%200s-12.5-32.8%200-45.3L242.7%20256%2073.4%2086.6c-12.5-12.5-12.5-32.8%200-45.3s32.8-12.5%2045.3%200l192%20192z%22%0A%20%20%20%20%2F%3E%0A%20%20%3C%2Fsvg%3E"
+          />
         </_Builtin.Block>
         <_Builtin.Block className="lightbox-close" tag="div">
-          <_Builtin.Link
-            className="icon-m solid"
-            button={false}
+          <_Builtin.HtmlEmbed
+            className="gallery-close"
             v-on:click="galleryClose"
-            block=""
-            options={{
-              href: "#",
-            }}
-          >
-            {""}
-          </_Builtin.Link>
+            value="%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20384%20512%22%3E%0A%20%20%20%20%3C!--!Font%20Awesome%20Free%206.5.1%20by%20%40fontawesome%20-%20https%3A%2F%2Ffontawesome.com%20License%20-%20https%3A%2F%2Ffontawesome.com%2Flicense%2Ffree%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%0A%20%20%20%20%3Cpath%0A%20%20%20%20%20%20fill%3D%22Currentcolor%22%0A%20%20%20%20%20%20d%3D%22M342.6%20150.6c12.5-12.5%2012.5-32.8%200-45.3s-32.8-12.5-45.3%200L192%20210.7%2086.6%20105.4c-12.5-12.5-32.8-12.5-45.3%200s-12.5%2032.8%200%2045.3L146.7%20256%2041.4%20361.4c-12.5%2012.5-12.5%2032.8%200%2045.3s32.8%2012.5%2045.3%200L192%20301.3%20297.4%20406.6c12.5%2012.5%2032.8%2012.5%2045.3%200s12.5-32.8%200-45.3L237.3%20256%20342.6%20150.6z%22%0A%20%20%20%20%2F%3E%0A%20%20%3C%2Fsvg%3E"
+          />
         </_Builtin.Block>
       </_Builtin.Block>
       <_Builtin.Section

@@ -1,6 +1,9 @@
 <script setup>
 import { Vue3Lottie } from "vue3-lottie";
 import loading from "../assets/loading.json";
+import ChevronLeft from "../assets/ChevronLeft.vue";
+import ChevronRight from "../assets/ChevronRight.vue";
+import Xmark from "../assets/Xmark.vue";
 </script>
 
 <template>
@@ -24,13 +27,19 @@ import loading from "../assets/loading.json";
         </div>
       </div>
       <div class="lightbox-arrow left">
-        <a href="#" class="icon-s solid arrowbutton" @click="leftArrow"></a>
+        <div class="gallery-arrow">
+          <ChevronLeft @click="leftArrow" />
+        </div>
       </div>
       <div class="lightbox-arrow right">
-        <a href="#" class="icon-s solid arrowbutton" @click="rightArrow"></a>
+        <div class="gallery-arrow">
+          <ChevronRight @click="rightArrow" />
+        </div>
       </div>
       <div class="lightbox-close">
-        <a href="#" class="icon-m solid" @click="galleryClose"></a>
+        <div class="gallery-close">
+          <Xmark @click="galleryClose" />
+        </div>
       </div>
     </div>
 

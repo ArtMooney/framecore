@@ -4804,7 +4804,68 @@ blockquote {
   }
 }
 
+.gallery-arrow {
+  display: flex;
+  width: 3rem;
+  height: 3rem;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
 
+  border-style: solid;
+  border-width: 0.125rem;
+  border-color: hsla(0, 0.00%, 100.00%, 1.00);
+  border-radius: 100%;
+
+  color: hsla(0, 0.00%, 100.00%, 1.00);
+}
+
+.gallery-arrow:hover {
+  color: hsla(0, 0.00%, 100.00%, 0.76);
+}
+
+.gallery-close {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  justify-content: center;
+  align-items: center;
+
+  color: hsla(0, 0.00%, 100.00%, 1.00);
+}
+
+.gallery-close:hover {
+  color: hsla(0, 0.00%, 100.00%, 0.76);
+}
+
+.some-icon {
+  width: 1.3rem;
+  height: 1.3rem;
+  color: #bdbdbd;
+}
+
+.some-icon:hover {
+  color: hsla(0, 0.00%, 100.00%, 1.00);
+}
+
+.some-icon.heart {
+  width: 1.25rem;
+}
+
+.some-icon.arrow {
+  width: 1rem;
+}
+
+.heart-red {
+  width: 1.2rem;
+  height: 0.96rem;
+  transform: translate(0px, 0.15rem);
+  color: hsla(0, 69.64%, 56.08%, 1.00);
+}
+
+
+ #w-node-c440224c-eb27-a6d8-6a12-da9b0e0b28e7-9313cf35 {
+}
  #w-node-_4db7cc3f-3306-1a5a-cc2e-69bfa2546b8a-a2546b88 {
   grid-column-start: 1;
   grid-column-end: 4;
