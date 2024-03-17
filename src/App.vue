@@ -11,7 +11,7 @@ import Navbar from "./components/Navbar.vue";
     <router-view />
   </div>
 
-  <!--  <div>{{ message }}</div>-->
+  <div>{{ message }}</div>
 </template>
 
 <script>
