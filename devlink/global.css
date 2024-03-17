@@ -3137,6 +3137,7 @@ blockquote {
 .error-message {
   margin-top: 1rem;
   padding: 1rem;
+  background-color: #ffdede;
   color: hsla(0, 0.00%, 0.00%, 1.00);
 }
 
@@ -4772,34 +4773,18 @@ blockquote {
   }
 }
 
-.grid-message-input {
+.grid-2-col {
   grid-area: span 1 / span 2 / span 1 / span 2;
 }
 
 @media screen and (max-width: 767px) {
-  .grid-message-input {
+  .grid-2-col {
     grid-area: span 1 / span 2;
   }
 }
 
 @media screen and (max-width: 479px) {
-  .grid-message-input {
-    grid-area: span 1 / span 1 / span 1 / span 1;
-  }
-}
-
-.div-block {
-  grid-area: span 1 / span 2 / span 1 / span 2;
-}
-
-@media screen and (max-width: 767px) {
-  .div-block {
-    grid-area: span 1 / span 2;
-  }
-}
-
-@media screen and (max-width: 479px) {
-  .div-block {
+  .grid-2-col {
     grid-area: span 1 / span 1 / span 1 / span 1;
   }
 }

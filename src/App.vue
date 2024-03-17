@@ -3,15 +3,15 @@ import Navbar from "./components/Navbar.vue";
 </script>
 
 <template>
+  <!--  <div class="body-full">-->
   <div class="content-frame">
     <Navbar />
   </div>
 
-  <div>
-    <router-view />
-  </div>
+  <router-view />
+  <!--  </div>-->
 
-  <div>{{ message }}</div>
+  <!--  <div>{{ message }}</div>-->
 </template>
 
 <script>

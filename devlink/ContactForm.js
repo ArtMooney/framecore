@@ -19,7 +19,7 @@ export function ContactForm({ as: _Component = _Builtin.Section }) {
           className="form-wrapper"
           name="wf-form-kontakta-oss"
           data-name="kontakta oss"
-          method="get"
+          method="post"
           id="kontakta-oss"
         >
           <_Builtin.Block className="content-info contact" tag="div">
@@ -34,169 +34,163 @@ export function ContactForm({ as: _Component = _Builtin.Section }) {
             </_Builtin.Paragraph>
           </_Builtin.Block>
           <_Builtin.Block tag="div">
-            <_Builtin.FormBlockLabel
-              className="text-white"
-              htmlFor="firstname-2"
-            >
+            <_Builtin.FormBlockLabel className="text-white" htmlFor="Firstname">
               {"Förnamn:"}
             </_Builtin.FormBlockLabel>
             <_Builtin.FormTextInput
               className="input"
               autoFocus={false}
               maxLength={256}
-              name="firstname-2"
-              data-name="Firstname 2"
+              name="Firstname"
+              data-name="Firstname"
               type="text"
               disabled={false}
               required={true}
-              id="firstname-2"
+              id="Firstname"
             />
           </_Builtin.Block>
           <_Builtin.Block tag="div">
-            <_Builtin.FormBlockLabel
-              className="text-white"
-              htmlFor="lastname-2"
-            >
+            <_Builtin.FormBlockLabel className="text-white" htmlFor="Lastname">
               {"Efternamn:"}
             </_Builtin.FormBlockLabel>
             <_Builtin.FormTextInput
               className="input"
               autoFocus={false}
               maxLength={256}
-              name="lastname-2"
-              data-name="Lastname 2"
+              name="Lastname"
+              data-name="Lastname"
               type="text"
               disabled={false}
               required={true}
-              id="lastname-2"
+              id="Lastname"
             />
           </_Builtin.Block>
           <_Builtin.Block tag="div">
-            <_Builtin.FormBlockLabel className="text-white" htmlFor="email-2">
+            <_Builtin.FormBlockLabel className="text-white" htmlFor="Email">
               {"Email:"}
             </_Builtin.FormBlockLabel>
             <_Builtin.FormTextInput
               className="input"
               autoFocus={false}
               maxLength={256}
-              name="email-2"
-              data-name="Email 2"
+              name="Email"
+              data-name="Email"
               type="email"
               disabled={false}
               required={true}
-              id="email-2"
+              id="Email"
             />
           </_Builtin.Block>
           <_Builtin.Block tag="div">
-            <_Builtin.FormBlockLabel className="text-white" htmlFor="phone-2">
+            <_Builtin.FormBlockLabel className="text-white" htmlFor="Phone">
               {"Telefon:"}
             </_Builtin.FormBlockLabel>
             <_Builtin.FormTextInput
               className="input"
               autoFocus={false}
               maxLength={256}
-              name="phone-2"
-              data-name="Phone 2"
+              name="Phone"
+              data-name="Phone"
               type="tel"
               disabled={false}
               required={true}
-              id="phone-2"
+              id="Phone"
             />
           </_Builtin.Block>
           <_Builtin.Block tag="div">
-            <_Builtin.FormBlockLabel className="text-white" htmlFor="company-2">
+            <_Builtin.FormBlockLabel className="text-white" htmlFor="Company">
               {"Företag:"}
             </_Builtin.FormBlockLabel>
             <_Builtin.FormTextInput
               className="input"
               autoFocus={false}
               maxLength={256}
-              name="company-2"
-              data-name="Company 2"
+              name="Company"
+              data-name="Company"
               type="text"
               disabled={false}
               required={true}
-              id="company-2"
+              id="Company"
             />
           </_Builtin.Block>
-          <_Builtin.Block className="grid-message-input" tag="div">
-            <_Builtin.FormBlockLabel className="text-white" htmlFor="message-2">
+          <_Builtin.Block className="grid-2-col" tag="div">
+            <_Builtin.FormBlockLabel className="text-white" htmlFor="Message">
               {"Meddelande:"}
             </_Builtin.FormBlockLabel>
             <_Builtin.FormTextarea
               className="input message"
-              name="message-2"
+              name="Message"
               maxLength={5000}
-              data-name="Message 2"
+              data-name="Message"
               required={true}
               autoFocus={false}
-              id="message-2"
+              id="Message"
             />
           </_Builtin.Block>
           <_Builtin.Block className="hide1" tag="div">
             <_Builtin.FormTextInput
               autoFocus={false}
               maxLength={256}
-              name="clientip-2"
-              data-name="Clientip 2"
+              name="Clientip"
+              data-name="Clientip"
               placeholder="clientip"
               type="text"
               disabled={false}
               required={false}
               v-model="extraFields.clientip"
-              id="clientip-2"
+              id="Clientip"
             />
             <_Builtin.FormTextInput
               autoFocus={false}
               maxLength={256}
-              name="pageuri-2"
-              data-name="Pageuri 2"
+              name="Pageuri"
+              data-name="Pageuri"
               placeholder="pageuri"
               type="text"
               disabled={false}
               required={false}
               v-model="extraFields.pageuri"
-              id="pageuri-2"
+              id="Pageuri"
             />
             <_Builtin.FormTextInput
               autoFocus={false}
               maxLength={256}
-              name="pagename-2"
-              data-name="Pagename 2"
+              name="Pagename"
+              data-name="Pagename"
               placeholder="pagename"
               type="text"
               disabled={false}
               required={false}
               v-model="extraFields.pagename"
-              id="pagename-2"
+              id="Pagename"
             />
             <_Builtin.FormTextInput
               autoFocus={false}
               maxLength={256}
-              name="hubspotutk-2"
-              data-name="Hubspotutk 2"
+              name="Hubspotutk"
+              data-name="Hubspotutk"
               placeholder="hubspotutk"
               type="text"
               disabled={false}
               required={false}
               v-model="extraFields.hubspotutk"
-              id="hubspotutk-2"
+              id="Hubspotutk"
             />
             <_Builtin.FormTextInput
               autoFocus={false}
               maxLength={256}
-              name="amex-2"
-              data-name="Amex 2"
+              name="Amex"
+              data-name="Amex"
               placeholder="amex"
               type="text"
               disabled={false}
               required={false}
               v-model="extraFields.amex"
-              id="amex-2"
+              id="Amex"
             />
           </_Builtin.Block>
           <_Builtin.Block className="spacer-m contact" tag="div" />
-          <_Builtin.Block className="div-block" tag="div">
+          <_Builtin.Block className="grid-2-col" tag="div">
             <_Builtin.FormButton
               className="button border"
               type="submit"
