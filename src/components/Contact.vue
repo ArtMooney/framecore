@@ -12,8 +12,7 @@
           <p>
             Som en liten leverantör erbjuder vi kreativa lösningar för att
             förbättra din kunds upplevelse. Vi arbetar tillsammans med dig för
-            att skapa en långsiktig relation och hjälpa dig att nå dina mål.<br /><br />Vi
-            svarar för det mesta snabbt.
+            att skapa en långsiktig relation och hjälpa dig att nå dina mål.<br /><br />
           </p>
         </div>
         <div>
@@ -150,9 +149,9 @@ export default {
         hubspotutk: this.getCookie("hubspotutk"),
         amex: "",
       },
-      userName: "Henrik",
-      userPass: "Schnabel",
-      formWebhook: "https://api.framecore.se/webhook/framecore-kontakt",
+      userName: `${import.meta.env.VITE_USERNAME}`,
+      userPass: `${import.meta.env.VITE_USERPASS}`,
+      formWebhook: "/contact",
       defaultEmailMessage: "Oj! Något gick fel när formuläret skulle skickas.",
       emailErrorMessage:
         "En eller flera emailadresser som ni har angett tycks inte ha ett korrekt format.",
@@ -171,24 +170,29 @@ export default {
   },
 
   methods: {
-    sendForm(event) {
+    async sendForm(event) {
       event.target.disabled = true;
 
       if (this.requiredFields(event.target.form)) {
-        let requestOptions = {
-          method: "POST",
-          headers: {
-            Authorization: "Basic " + btoa(this.userName + ":" + this.userPass),
-          },
-          body: this.formCollector(event.target.form),
-          redirect: "follow",
-        };
+        let res;
 
-        fetch(this.formWebhook, requestOptions)
-          .then((response) => {
-            if (!response.ok) throw new Error();
-          })
-          .then((result) => {
+        try {
+          res = await fetch("/contact", {
+            method: "POST",
+            headers: {
+              Authorization:
+                "Basic " + btoa(this.userName + ":" + this.userPass),
+            },
+            body: this.formCollector(event.target.form),
+            redirect: "follow",
+          });
+
+          const jsonResponse = await res.json();
+
+          if (!res.ok || jsonResponse.error) {
+            throw new Error("Request failed");
+            this.errorMessage = true;
+          } else {
             console.log("success");
             event.target.value = event.target.dataset.wait;
 
@@ -196,11 +200,11 @@ export default {
               this.contactForm = false;
               this.successMessage = true;
             }, 1500);
-          })
-          .catch((error) => {
-            console.log("error");
-            this.errorMessage = true;
-          });
+          }
+        } catch (error) {
+          console.error("An error occurred:", error);
+          this.errorMessage = true;
+        }
       } else {
         event.target.disabled = false;
       }
