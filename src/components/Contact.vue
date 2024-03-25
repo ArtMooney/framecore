@@ -1,12 +1,7 @@
 <template>
   <div class="content contact">
     <div class="contact-form">
-      <form
-        v-if="contactForm"
-        class="form-wrapper"
-        name="kontakta-oss"
-        method="POST"
-      >
+      <form v-if="contactForm" class="form-wrapper" name="kontakta-oss">
         <div class="content-info contact">
           <h4>Hör av er!</h4>
           <p>
