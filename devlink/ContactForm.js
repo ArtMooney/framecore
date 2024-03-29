@@ -30,7 +30,7 @@ export function ContactForm({ as: _Component = _Builtin.Section }) {
               }
               <br />
               <br />
-              {"Vi svarar för det mesta snabbt."}
+              <br />
             </_Builtin.Paragraph>
           </_Builtin.Block>
           <_Builtin.Block tag="div">
