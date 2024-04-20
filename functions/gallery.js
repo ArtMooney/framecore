@@ -23,7 +23,7 @@ export const onRequestGet = async (context) => {
     await saveThumbs(env.pcloudtoken, galleryFolderId, thumbsFolderId);
   }
 
-  const gallery = await listFolder(env.pcloudtoken, thumbsFolderId);
+  const gallery = await listFolder(env.pcloudtoken, galleryFolderId);
   const output = [];
 
   for (const item of gallery) {
@@ -31,12 +31,9 @@ export const onRequestGet = async (context) => {
       fileid: item.fileid,
       name: item.name,
       contenttype: item.contenttype,
+      thumbname: item.name.substring(0, item.name.lastIndexOf(".")) + ".jpg",
     });
   }
-
-  // return new Response(JSON.stringify(output), {
-  //   headers: corsHeaders,
-  // });
 
   return new Response(JSON.stringify(output));
 };
@@ -46,7 +43,7 @@ async function saveThumbs(pcloudToken, galleryFolderId, thumbsFolderId) {
 
   for (const image of gallery) {
     let response = await fetch(
-      `https://api.pcloud.com/savethumb?fileid=${image.fileid}&tofolderid=${thumbsFolderId}&toname=${image.name}&size=500x700`,
+      `https://api.pcloud.com/savethumb?fileid=${image.fileid}&tofolderid=${thumbsFolderId}&toname=${image.name.substring(0, image.name.lastIndexOf("."))}.jpg&size=500x700`,
       {
         method: "GET",
         headers: {

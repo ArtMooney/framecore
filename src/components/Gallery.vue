@@ -47,11 +47,11 @@ import Xmark from "../assets/Xmark.vue";
       <div v-show="displayGallery" class="gallery-wrapper">
         <div class="gallery-item" v-for="(image, index) of images">
           <img
-            :src="`${thumbsBaseUrl}${image.name}?${getRandomNumber}`"
+            :src="`${thumbsBaseUrl}${image.thumbname}?${getRandomNumber}`"
             @click="showItem($event, index)"
             @load="galleryItemLoaded"
             @error="
-              $event.target.src = `${thumbsBaseUrl}${image.name}?${getRandomNumber}`
+              $event.target.src = `${thumbsBaseUrl}${image.thumbname}?${getRandomNumber}`
             "
             class="image"
           />
