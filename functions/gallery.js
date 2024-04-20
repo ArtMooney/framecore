@@ -34,9 +34,11 @@ export const onRequestGet = async (context) => {
     });
   }
 
-  return new Response(JSON.stringify(output, null, 2), {
-    headers: corsHeaders,
-  });
+  // return new Response(JSON.stringify(output), {
+  //   headers: corsHeaders,
+  // });
+
+  return new Response(JSON.stringify(output));
 };
 
 async function saveThumbs(pcloudToken, galleryFolderId, thumbsFolderId) {
