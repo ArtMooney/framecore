@@ -1,12 +1,11 @@
 <script setup>
-import Contact from "../components/Contact.vue";
+import Gallery from "../components/Gallery.vue";
 import Footer from "../components/Footer.vue";
-import Navbar from "../components/Navbar.vue";
 </script>
 
 <template>
   <div class="content-frame">
-    <Contact />
+    <Gallery />
     <Footer />
   </div>
 </template>

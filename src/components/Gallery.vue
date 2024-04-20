@@ -47,11 +47,11 @@ import Xmark from "../assets/Xmark.vue";
       <div v-show="displayGallery" class="gallery-wrapper">
         <div class="gallery-item" v-for="(image, index) of images">
           <img
-            :src="`https://filedn.com/lODGkE8bRyjVm8tpT986SXj/framecore/thumbs/${image.thumbname}?${getRandomNumber}`"
+            :src="`${thumbsBaseUrl}${image.name}?${getRandomNumber}`"
             @click="showItem($event, index)"
             @load="galleryItemLoaded"
             @error="
-              $event.target.src = `https://filedn.com/lODGkE8bRyjVm8tpT986SXj/framecore/thumbs/${image.thumbname}?${getRandomNumber}`
+              $event.target.src = `${thumbsBaseUrl}${image.name}?${getRandomNumber}`
             "
             class="image"
           />
@@ -77,6 +77,10 @@ export default {
       imageOrVideo: true,
       imageIndex: 0,
       loadedThumbs: 0,
+      thumbsBaseUrl:
+        "https://filedn.com/lODGkE8bRyjVm8tpT986SXj/framecore/backup/thumbs/",
+      lightboxBaseUrl:
+        "https://filedn.com/lODGkE8bRyjVm8tpT986SXj/framecore/gallery/",
     };
   },
 
@@ -86,7 +90,7 @@ export default {
 
   computed: {
     async getImageData() {
-      const url = "https://api.framecore.se/webhook/framecore-gallery";
+      const url = "/gallery";
       const res = await fetch(url);
       return await res.json();
     },
@@ -101,7 +105,7 @@ export default {
       const images = JSON.parse(JSON.stringify(this.images));
       if (index < 0) index = images.length - 1;
       if (index > images.length - 1) index = 0;
-      this.imageLightbox = `https://filedn.com/lODGkE8bRyjVm8tpT986SXj/framecore/gallery/${images[index].name}`;
+      this.imageLightbox = `${this.lightboxBaseUrl}${images[index].name}`;
 
       if (
         images[index].contenttype === "image/jpeg" ||

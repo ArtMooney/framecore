@@ -1,10 +1,13 @@
 # FrameCore website
 
-run for local development:
+### run for local development:
+
 wrangler pages dev -- npm run dev
 
-sync webflow devlink components:
+### sync webflow devlink components:
+
 npx webflow devlink sync
 
-deployment:
+### deployment:
+
 deploys via git
