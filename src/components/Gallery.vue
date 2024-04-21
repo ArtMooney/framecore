@@ -68,7 +68,7 @@ export default {
     return {
       images: [],
       galleryLightbox: false,
-      displayGallery: false,
+      displayGallery: true,
       imageLightbox: "",
       galleryLoader: true,
       imageOrVideo: true,
