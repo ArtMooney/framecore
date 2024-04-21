@@ -18,9 +18,20 @@ export const onRequestGet = async (context) => {
   //     headers: corsHeaders,
   //   });
 
-  if (!(await isChangedFolders(env.pcloudtoken, containerFolderId))) {
-    await deleteOldThumbs(env.pcloudtoken, thumbsFolderId);
+  const generateGallery = await isChangedFolders(
+    env.pcloudtoken,
+    containerFolderId,
+  );
+
+  if (generateGallery.changed) {
+    const processFile = await uploadProcessFile(
+      env.pcloudtoken,
+      containerFolderId,
+    );
+
+    await deleteOldThumbs(env.pcloudtoken, thumbsFolderId, processFile.fileid);
     await saveThumbs(env.pcloudtoken, galleryFolderId, thumbsFolderId);
+    await deleteFile(env.pcloudtoken, processFile.fileid);
   }
 
   const gallery = await listFolder(env.pcloudtoken, galleryFolderId);
@@ -57,11 +68,13 @@ async function saveThumbs(pcloudToken, galleryFolderId, thumbsFolderId) {
   return "ok";
 }
 
-async function deleteOldThumbs(pcloudToken, thumbsFolderId) {
+async function deleteOldThumbs(pcloudToken, thumbsFolderId, doNotDeleteFileId) {
   let thumbs = await listFolder(pcloudToken, thumbsFolderId);
 
   for (const thumb of thumbs) {
-    await deleteFile(pcloudToken, thumb.fileid);
+    if (thumb.fileid !== doNotDeleteFileId) {
+      await deleteFile(pcloudToken, thumb.fileid);
+    }
   }
 
   return "ok";
@@ -73,24 +86,15 @@ async function deleteFile(pcloudToken, fileid) {
     Authorization: "Bearer " + pcloudToken,
   };
 
-  try {
-    let response = await fetch(
-      `https://api.pcloud.com/deletefile?fileid=${fileid}`,
-      {
-        method: "GET",
-        headers: headersList,
-      },
-    );
+  let response = await fetch(
+    `https://api.pcloud.com/deletefile?fileid=${fileid}`,
+    {
+      method: "GET",
+      headers: headersList,
+    },
+  );
 
-    if (response.ok) {
-      return "ok";
-    } else {
-      throw new Error("Failed to delete file");
-    }
-  } catch (error) {
-    console.log(error);
-    throw error;
-  }
+  return JSON.parse(await response.text());
 }
 
 async function isChangedFolders(pcloudToken, containerFolderId) {
@@ -111,7 +115,41 @@ async function isChangedFolders(pcloudToken, containerFolderId) {
     ? (status.changed = true)
     : (status.changed = false);
 
+  if (status.changed) {
+    for (const item of list) {
+      if (item.name === "processing.txt") {
+        status.changed = false;
+      }
+    }
+  }
+
   return status;
+}
+
+async function uploadProcessFile(pcloudToken, folderId) {
+  let headersList = {
+    Accept: "*/*",
+    Authorization: "Bearer " + pcloudToken,
+  };
+
+  const textContent = "processing";
+  const blob = new Blob([textContent], { type: "text/plain" });
+  const formData = new FormData();
+  formData.append("file", blob, "processing.txt");
+
+  let response = await fetch(
+    `https://api.pcloud.com/uploadfile?folderid=${folderId}`,
+    {
+      method: "POST",
+      headers: headersList,
+      body: formData,
+    },
+  );
+
+  let result = JSON.parse(await response.text());
+  result = result.metadata;
+
+  return result[0];
 }
 
 async function listFolder(pcloudToken, folderId) {
