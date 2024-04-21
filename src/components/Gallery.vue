@@ -74,10 +74,8 @@ export default {
       imageOrVideo: true,
       imageIndex: 0,
       loadedThumbs: 0,
-      thumbsBaseUrl:
-        "https://filedn.com/lODGkE8bRyjVm8tpT986SXj/framecore/backup/thumbs/",
-      lightboxBaseUrl:
-        "https://filedn.com/lODGkE8bRyjVm8tpT986SXj/framecore/gallery/",
+      thumbsBaseUrl: `${import.meta.env.VITE_THUMBSBASEURL}`,
+      lightboxBaseUrl: `${import.meta.env.VITE_LIGHTBOXBASEURL}`,
     };
   },
 
