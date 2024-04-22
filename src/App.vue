@@ -25,7 +25,7 @@ export default {
   },
 
   async mounted() {
-    const res = await fetch("/helloworld");
+    const res = await fetch("/api/helloworld");
     this.message = await res.text();
   },
 };

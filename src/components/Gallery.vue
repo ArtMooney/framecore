@@ -68,7 +68,7 @@ export default {
     return {
       images: [],
       galleryLightbox: false,
-      displayGallery: true,
+      displayGallery: false,
       imageLightbox: "",
       galleryLoader: true,
       imageOrVideo: true,
@@ -85,7 +85,7 @@ export default {
 
   computed: {
     async getImageData() {
-      const url = "/gallery";
+      const url = "/api/gallery";
       const res = await fetch(url);
       return await res.json();
     },
