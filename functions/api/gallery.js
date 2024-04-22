@@ -28,7 +28,7 @@ export const onRequestGet = async (context) => {
       containerFolderId,
     );
 
-    await deleteOldThumbs(env.pcloudToken, thumbsFolderId, processFile.fileid);
+    await deleteOldThumbs(env.pcloudToken, thumbsFolderId);
     await saveThumbs(env.pcloudToken, galleryFolderId, thumbsFolderId);
     await deleteFile(env.pcloudToken, processFile.fileid);
   }
@@ -45,7 +45,7 @@ export const onRequestGet = async (context) => {
     });
   }
 
-  return new Response(JSON.stringify(output));
+  return new Response(JSON.stringify(output, null, 2));
 };
 
 async function saveThumbs(pcloudToken, galleryFolderId, thumbsFolderId) {
@@ -67,13 +67,11 @@ async function saveThumbs(pcloudToken, galleryFolderId, thumbsFolderId) {
   return "ok";
 }
 
-async function deleteOldThumbs(pcloudToken, thumbsFolderId, doNotDeleteFileId) {
+async function deleteOldThumbs(pcloudToken, thumbsFolderId) {
   let thumbs = await listFolder(pcloudToken, thumbsFolderId);
 
   for (const thumb of thumbs) {
-    if (thumb.fileid !== doNotDeleteFileId) {
-      await deleteFile(pcloudToken, thumb.fileid);
-    }
+    await deleteFile(pcloudToken, thumb.fileid);
   }
 
   return "ok";
