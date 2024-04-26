@@ -76,6 +76,8 @@ export default {
       loadedThumbs: 0,
       thumbsBaseUrl: `${import.meta.env.VITE_THUMBSBASEURL}`,
       lightboxBaseUrl: `${import.meta.env.VITE_LIGHTBOXBASEURL}`,
+      userName: `${import.meta.env.VITE_USERNAME}`,
+      userPass: `${import.meta.env.VITE_USERPASS}`,
     };
   },
 
@@ -86,7 +88,11 @@ export default {
   computed: {
     async getImageData() {
       const url = "/api/gallery";
-      const res = await fetch(url);
+      const res = await fetch(url, {
+        headers: {
+          Authorization: "Basic " + btoa(this.userName + ":" + this.userPass),
+        },
+      });
       return await res.json();
     },
 

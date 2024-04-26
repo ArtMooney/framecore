@@ -1,3 +1,5 @@
+import { checkLogin } from "../middleware/check-login.js";
+
 export const onRequestGet = async (context) => {
   const corsHeaders = {
     "Access-Control-Allow-Origin": "*",
@@ -8,14 +10,15 @@ export const onRequestGet = async (context) => {
 
   const url = new URL(context.request.url);
   const env = await context.env;
+
+  if (!(await checkLogin(context.request.headers, env.userName, env.userPass)))
+    return new Response(JSON.stringify({ error: "Login failed" }), {
+      headers: corsHeaders,
+    });
+
   const containerFolderId = env.containerFolderId;
   const galleryFolderId = env.galleryFolderId;
   const thumbsFolderId = env.thumbsFolderId;
-
-  // if (!(await checkLogin(context.request.headers, env.userName, env.userPass)))
-  //   return new Response(JSON.stringify({ error: "Login failed" }), {
-  //     headers: corsHeaders,
-  //   });
 
   const generateGallery = await isChangedFolders(
     env.pcloudToken,
@@ -168,12 +171,4 @@ async function listFolder(pcloudToken, folderId) {
   list = list.filter((obj) => obj.name !== ".DS_Store");
 
   return list;
-}
-
-async function checkLogin(headers, userName, userPass) {
-  const authHeader = headers.get("Authorization");
-  const decodedString = atob(authHeader.replace("Basic ", ""));
-  const [email, password] = decodedString.split(":");
-
-  return userName === email && userPass === password;
 }
