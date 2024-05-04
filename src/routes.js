@@ -20,6 +20,11 @@ export default () =>
         name: "Contact",
         component: () => import("./pages/Contact.vue"),
       },
+      {
+        path: "/:pathMatch(.*)*",
+        name: "NotFound",
+        component: () => import("./pages/NotFound.vue"),
+      },
     ],
     scrollBehavior(to, from, savedPosition) {
       if (to.hash) {
