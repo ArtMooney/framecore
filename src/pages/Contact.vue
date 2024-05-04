@@ -10,15 +10,35 @@ import Contact from "../components/Contact.vue";
 
 <script>
 export default {
-  name: "Home",
+  name: "Contact",
   metaInfo: {
-    title: "Home",
+    title: "Kontakta Oss - Webb- och 3D-Animationstjänster | FrameCore 2024",
     meta: [
       {
-        name: "description",
-        content: "Welcome to Framecore!",
+        name: "keywords",
+        content:
+          "kontakta oss, kontaktformulär, frågor, support, FrameCore 2024",
       },
-      // Add more meta tags as needed
+      { name: "robots", content: "index, follow" },
+      {
+        name: "description",
+        content:
+          "Kontakta oss för att diskutera dina behov och projekt. Använd vårt kontaktformulär för att skicka frågor, begära support eller få mer information om våra tjänster. Drivs av FrameCore 2024.",
+      },
+      {
+        property: "og:title",
+        content:
+          "Kontakta Oss - Webb- och 3D-Animationstjänster | FrameCore 2024",
+      },
+      {
+        property: "og:description",
+        content:
+          "Kontakta oss för att diskutera dina behov och projekt. Använd vårt kontaktformulär för att skicka frågor, begära support eller få mer information om våra tjänster. Drivs av FrameCore 2024.",
+      },
+      {
+        property: "og:image",
+        content: "https://www.framecore.se/assets/safsen_snapshot.jpg",
+      },
     ],
   },
 };
