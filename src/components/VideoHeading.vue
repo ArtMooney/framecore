@@ -20,7 +20,12 @@
         konsultation.
       </p>
       <div class="spacer-m"></div>
-      <a href="#" class="button black w-button">Läs mer</a>
+      <router-link
+        class="button black w-button"
+        :to="{ path: '/', hash: '#services' }"
+      >
+        Läs mer
+      </router-link>
     </div>
   </div>
 </template>

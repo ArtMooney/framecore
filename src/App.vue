@@ -1,15 +1,20 @@
 <script setup>
 import Navbar from "./components/Navbar.vue";
+import Footer from "./components/Footer.vue";
 </script>
 
 <template>
-  <!--  <div class="body-full">-->
-  <div class="content-frame">
-    <Navbar />
-  </div>
+  <div class="body-full">
+    <div class="content-frame">
+      <Navbar />
+    </div>
 
-  <router-view />
-  <!--  </div>-->
+    <router-view />
+
+    <div class="content-frame">
+      <Footer />
+    </div>
+  </div>
 </template>
 
 <script>
@@ -17,31 +22,3 @@ export default {
   name: "Framecore",
 };
 </script>
-
-<style>
-body {
-  background-color: black;
-}
-
-.content-frame {
-  width: 100%;
-  max-width: 90rem;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 2rem;
-  padding-left: 2rem;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: stretch;
-  grid-auto-columns: 1fr;
-  grid-template-columns: minmax(12rem, 0.25fr) 1fr minmax(12rem, 0.25fr);
-  grid-template-rows: auto;
-}
-
-@media screen and (max-width: 479px) {
-  .content-frame {
-    padding-right: 1rem;
-    padding-left: 1rem;
-  }
-}
-</style>

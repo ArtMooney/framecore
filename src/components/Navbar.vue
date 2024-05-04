@@ -6,29 +6,29 @@ import sandwich from "../assets/burger-menu.json";
 </script>
 
 <template>
-  <div class="content navbar">
-    <a href="../index.html" class="navbar-logo"
+  <div id="navbar" class="content navbar">
+    <a href="/" class="navbar-logo"
       ><img src="../assets/Framecore_color.svg" alt="" class="image contain"
     /></a>
 
     <Transition name="navbar-links">
       <div v-if="mobileMenu" class="navbar-links">
         <div class="navbar-arrow"></div>
-        <a href="/#read-more" class="navlink">
+        <router-link class="navlink" :to="{ path: '/', hash: '#services' }">
           <div>Tjänster</div>
           <div class="navicon-wrapper">
             <Cube class="navicon blur" />
             <Cube class="navicon" />
           </div>
-        </a>
-        <a href="../case.html" class="navlink">
+        </router-link>
+        <a href="/case" class="navlink">
           <div>Kunder &amp; Case</div>
           <div class="navicon-wrapper">
             <MugHot class="navicon blur" />
             <MugHot class="navicon" />
           </div>
         </a>
-        <a href="../kontakt.html" class="button border navbutton w-button"
+        <a href="/contact" class="button border navbutton w-button"
           >Kontakta oss</a
         >
       </div>

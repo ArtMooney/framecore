@@ -8,16 +8,25 @@ export default () =>
         path: "/",
         name: "Home",
         component: () => import("./pages/Home.vue"),
+        props: true,
       },
       {
         path: "/case",
         name: "Case",
-        component: () => import("./components/Animations.vue"),
+        component: () => import("./pages/Case.vue"),
       },
       {
-        path: "/kontakt",
-        name: "Kontakt",
-        component: () => import("./components/Commercials.vue"),
+        path: "/contact",
+        name: "Contact",
+        component: () => import("./pages/Contact.vue"),
       },
     ],
+    scrollBehavior(to, from, savedPosition) {
+      if (to.hash) {
+        return {
+          el: to.hash,
+          behavior: "smooth",
+        };
+      }
+    },
   });

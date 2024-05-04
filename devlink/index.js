@@ -9,6 +9,7 @@ export * from "./Animations";
 export * from "./Commercials";
 export * from "./ContactForm";
 export * from "./DesignQuote";
+export * from "./DevLinkProvider";
 export * from "./Footer";
 export * from "./Gallery";
 export * from "./Homepages";

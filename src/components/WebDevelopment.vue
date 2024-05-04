@@ -13,7 +13,7 @@
         enklare och öka produktiviteten och lönsamheten med webbappar.
       </p>
       <div class="spacer-m"></div>
-      <a class="button black w-button" href="#">Kontakta oss</a>
+      <a class="button black w-button" href="/contact">Kontakta oss</a>
     </div>
   </div>
 </template>

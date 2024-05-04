@@ -1,3 +1,5 @@
+import { listFolder } from "../utility/list-folder.js";
+
 export async function saveThumbs(pcloudToken, galleryFolderId, thumbsFolderId) {
   let gallery = await listFolder(pcloudToken, galleryFolderId);
 

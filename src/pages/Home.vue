@@ -1,14 +1,21 @@
 <script setup>
-import Contact from "../components/Contact.vue";
-import Gallery from "../components/Gallery.vue";
-import Footer from "../components/Footer.vue";
+import VideoHeading from "../components/VideoHeading.vue";
+import DesignQuote from "../components/DesignQuote.vue";
+import Animations from "../components/Animations.vue";
+import Commercials from "../components/Commercials.vue";
+import WebDevelopment from "../components/WebDevelopment.vue";
+import HomePages from "../components/HomePages.vue";
 </script>
 
 <template>
+  <VideoHeading />
+
   <div class="content-frame">
-    <Gallery />
-    <!--    <Contact />-->
-    <Footer />
+    <DesignQuote />
+    <Animations />
+    <Commercials />
+    <WebDevelopment />
+    <HomePages />
   </div>
 </template>
 
@@ -24,12 +31,6 @@ export default {
       },
       // Add more meta tags as needed
     ],
-  },
-
-  data() {
-    return {
-      message: "",
-    };
   },
 };
 </script>

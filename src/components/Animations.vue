@@ -1,5 +1,5 @@
 <template>
-  <div id="read-more" class="content _1-2">
+  <div id="services" class="content _1-2">
     <img
       src="../assets/Hand_new_utkast06.jpg"
       loading="lazy"

@@ -17,12 +17,11 @@
     <a href="https://kinnahusvagnsservice.se" target="_blank">
       <img
         class="image contain"
-        id="w-node-_8c38236f-6487-952c-a523-6fc9e0f39955-e0f3994e"
         loading="lazy"
         width="auto"
         height="auto"
         alt=""
-        src="https://uploads-ssl.webflow.com/5a770d8f4323220001d73352/5c2b84e077f283f1dda190e3_kinnahusvagnsservice.jpg"
+        src="../assets/kinnahusvagnsservice.jpg"
       />
     </a>
   </div>

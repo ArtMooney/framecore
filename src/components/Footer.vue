@@ -7,25 +7,31 @@ import ArrowUp from "../assets/ArrowUp.vue";
 
 <template>
   <div class="content footer center">
-    <a class="footer-logo w-inline-block" href="#">
+    <a class="footer-logo w-inline-block" href="/">
       <img src="../assets/Framecore-light-gray.svg" alt="" />
     </a>
     <div class="footerlink-block center">
       <div class="spacer-s"></div>
-      <a class="footerlink" href="#read-more">Tjänster</a>
-      <a class="footerlink" href="#">Kunder & Case</a>
-      <a class="footerlink" href="#">Kontakta oss</a>
+      <router-link class="footerlink" :to="{ path: '/', hash: '#services' }">
+        Tjänster
+      </router-link>
+      <a class="footerlink" href="/case">Kunder & Case</a>
+      <a class="footerlink" href="/contact">Kontakta oss</a>
     </div>
     <div class="footer-line"></div>
     <div class="some-wrapper">
-      <House href="../index.html" class="some-icon house" />
+      <router-link to="/" class="some-icon house">
+        <House />
+      </router-link>
       <Star class="some-icon star" />
       <Heart class="some-icon heart" />
-      <ArrowUp class="some-icon arrow" />
+      <router-link class="some-icon arrow" :to="{ hash: '#navbar' }">
+        <ArrowUp />
+      </router-link>
       <div class="footer-blob heart">
         This website was made with
         <Heart class="heart-red" />
-        by FrameCore 2023
+        by FrameCore 2024
       </div>
       <div class="footer-blob star">You are amazing!</div>
     </div>
@@ -40,12 +46,12 @@ export default {
 
 <style scoped>
 .some-icon.heart:hover ~ .footer-blob.heart {
-  margin-left: 0rem;
+  margin-left: 0;
   opacity: 1;
 }
 
 .some-icon.star:hover ~ .footer-blob.star {
-  margin-left: 0rem;
+  margin-left: 0;
   opacity: 1;
 }
 </style>

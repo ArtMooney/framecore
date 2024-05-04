@@ -3,12 +3,11 @@
     <div class="image-overlay slow-scroll">
       <img
         class="image slow-scroll"
-        id="w-node-_4db7cc3f-3306-1a5a-cc2e-69bfa2546b8a-a2546b88"
         loading="lazy"
         width="auto"
         height="auto"
         alt=""
-        src="https://uploads-ssl.webflow.com/5a770d8f4323220001d73352/5b93ca6339ac8988109d737b_safsen_snapshot.jpg"
+        src="../assets/safsen_snapshot.jpg"
       />
     </div>
     <div class="image-overlay black-25"></div>
@@ -21,7 +20,7 @@
         för det som reklamen handlar om.
       </p>
       <div class="spacer-m"></div>
-      <a class="button black w-button" href="#">Kunder & Case</a>
+      <a class="button black w-button" href="/case">Kunder & Case</a>
     </div>
   </div>
 </template>
