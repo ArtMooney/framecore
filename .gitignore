@@ -12,7 +12,6 @@ dist
 dist-ssr
 *.local
 .wrangler
-.webflowrc.cjs
 
 # Editor directories and files
 .vscode/*
