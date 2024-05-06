@@ -1,5 +1,6 @@
 import { createApp } from "vue";
-import "../devlink/global.css";
+import "./css/global.css";
+import "./css/fonts.css";
 import App from "./App.vue";
 import createRouter from "./routes";
 

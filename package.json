@@ -9,7 +9,6 @@
         "preview": "vite preview"
     },
     "dependencies": {
-        "@webflow/webflow-cli": "^1.6.7",
         "plyr": "^3.7.8",
         "purgecss": "^5.0.0",
         "vite-plugin-purgecss": "^0.2.12",
@@ -20,6 +19,8 @@
     },
     "devDependencies": {
         "@vitejs/plugin-vue": "^4.5.2",
+        "@webflow/webflow-cli": "^1.6.11",
+        "prettier": "^3.2.5",
         "vite": "^5.1.6",
         "wrangler": "^3.51.2"
     }
