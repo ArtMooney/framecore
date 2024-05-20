@@ -9,7 +9,9 @@
         "preview": "vite preview"
     },
     "dependencies": {
+        "autoprefixer": "^10.4.19",
         "plyr": "^3.7.8",
+        "postcss": "^8.4.38",
         "purgecss": "^5.0.0",
         "vite-plugin-purgecss": "^0.2.12",
         "vue": "^3.3.11",
@@ -21,6 +23,7 @@
         "@vitejs/plugin-vue": "^4.5.2",
         "@webflow/webflow-cli": "^1.6.11",
         "prettier": "^3.2.5",
+        "tailwindcss": "^3.4.3",
         "vite": "^5.1.6",
         "wrangler": "^3.51.2"
     }
