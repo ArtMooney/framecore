@@ -4,7 +4,7 @@
       src="../assets/Hand_new_utkast06.jpg"
       loading="lazy"
       alt=""
-      class="h-full w-full object-cover transition-transform duration-500 ease-in-out hover:scale-[1.01]"
+      class="h-full w-full object-cover duration-500 ease-in-out hover:scale-[1.01]"
     />
     <div class="col-span-2 h-fit self-center p-4">
       <h2 class="text-3xl md:text-4xl">Animationer &amp; visualiseringar</h2>

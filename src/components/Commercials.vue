@@ -1,26 +1,34 @@
+<script setup>
+import Button from "../elements/Button.vue";
+</script>
+
 <template>
-  <div class="content heading slim">
-    <div class="image-overlay slow-scroll">
+  <div
+    class="grid-cols-thin md:grid-cols-slim relative mb-16 mt-4 grid min-h-0 py-12"
+  >
+    <div
+      class="absolute bottom-0 left-0 right-0 top-0 flex items-center overflow-hidden"
+    >
       <img
-        class="image slow-scroll"
+        class="min-h-screen w-full object-cover"
         loading="lazy"
-        width="auto"
-        height="auto"
         alt=""
         src="../assets/safsen_snapshot.jpg"
       />
     </div>
-    <div class="image-overlay black-25"></div>
-    <div class="content-info reklamfilmer">
-      <h3 class="heading3">Reklamfilmer</h3>
-      <p class="text-white">
+    <div class="absolute bottom-0 left-0 right-0 top-0 bg-black/25"></div>
+    <div
+      class="center relative col-start-2 col-end-2 row-start-1 row-end-1 flex w-full flex-col items-start py-8"
+    >
+      <h3 class="text-3xl md:text-4xl">Reklamfilmer</h3>
+      <p class="pb-8 text-white">
         3D animation är ett kraftfullt verktyg för att skapa minnesvärda
         reklamfilmer. Det ger möjlighet till realistiska visuella effekter och
         virtuella miljöer som fångar tittarnas uppmärksamhet och ökar intresset
         för det som reklamen handlar om.
       </p>
-      <div class="spacer-m"></div>
-      <a class="button black w-button" href="/case">Kunder & Case</a>
+
+      <Button text="Kunder & Case" link="/case" />
     </div>
   </div>
 </template>
