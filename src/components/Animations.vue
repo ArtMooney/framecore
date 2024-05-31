@@ -1,14 +1,13 @@
 <template>
-  <div id="services" class="content _1-2">
+  <div id="services" class="mb-16 mt-4 grid grid-cols-1 gap-4 md:grid-cols-3">
     <img
       src="../assets/Hand_new_utkast06.jpg"
       loading="lazy"
-      sizes="(max-width: 479px) 93vw, (max-width: 767px) 92vw, (max-width: 991px) 39vw, 31vw"
       alt=""
-      class="image"
+      class="h-full w-full object-cover transition-transform duration-500 ease-in-out hover:scale-[1.01]"
     />
-    <div class="content-info _1-2">
-      <h2 class="heading3">Animationer &amp; visualiseringar</h2>
+    <div class="col-span-2 h-fit self-center p-4">
+      <h2 class="text-3xl md:text-4xl">Animationer &amp; visualiseringar</h2>
       <p>
         3D visualiseringar är en kraftfull metod för att presentera information,
         de gör det möjligt att visa komplexa data i en tredimensionell miljö,

@@ -10,7 +10,9 @@ import HomePages from "../components/HomePages.vue";
 <template>
   <VideoHeading />
 
-  <div class="content-frame">
+  <div
+    class="grid-rows-auto mx-auto grid w-full max-w-screen-2xl grid-cols-1 px-8 sm:px-4"
+  >
     <DesignQuote />
     <Animations />
     <Commercials />
