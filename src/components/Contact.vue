@@ -1,73 +1,76 @@
+<script setup>
+import Button from "../elements/Button.vue";
+import Input from "../elements/Input.vue";
+</script>
+
 <template>
-  <div class="content contact">
-    <div class="contact-form">
-      <form v-if="contactForm" class="form-wrapper" name="kontakta-oss">
-        <div class="content-info contact">
-          <h4>Hör av er!</h4>
+  <div
+    class="relative mb-16 mt-4 grid min-h-0 grid-cols-1 py-12 md:grid-cols-slim"
+  >
+    <div class="col-span-1 md:col-start-2 md:col-end-2">
+      <form
+        v-if="contactForm"
+        class="grid grid-cols-1 text-white md:grid-cols-2 md:gap-4"
+        name="kontakta-oss"
+      >
+        <div class="col-span-1 md:col-span-2">
+          <h4 class="text-3xl md:text-4xl">Hör av er!</h4>
           <p>
             Som en liten leverantör erbjuder vi kreativa lösningar för att
             förbättra din kunds upplevelse. Vi arbetar tillsammans med dig för
             att skapa en långsiktig relation och hjälpa dig att nå dina mål.<br /><br />
           </p>
         </div>
-        <div>
-          <label class="text-white" for="firstname">Förnamn:</label>
-          <input
-            class="input w-input"
-            maxlength="256"
-            name="firstname"
-            type="text"
-            required
-          />
-        </div>
-        <div>
-          <label class="text-white" for="lastname">Efternamn:</label>
-          <input
-            class="input w-input"
-            maxlength="256"
-            name="lastname"
-            type="text"
-            required
-          />
-        </div>
-        <div>
-          <label class="text-white" for="email">Email:</label>
-          <input
-            class="input w-input"
-            maxlength="256"
-            name="email"
-            type="email"
-            required
-          />
-        </div>
-        <div>
-          <label class="text-white" for="phone">Telefon:</label>
-          <input
-            class="input w-input"
-            maxlength="256"
-            name="phone"
-            type="tel"
-            required
-          />
-        </div>
-        <div>
-          <label class="text-white" for="company">Företag:</label>
-          <input
-            class="input w-input"
-            maxlength="256"
-            name="company"
-            type="text"
-          />
-        </div>
-        <div class="grid-2-col">
-          <label class="text-white" for="message">Meddelande:</label>
-          <textarea
-            class="input message w-input"
-            name="message"
-            maxlength="5000"
-            required
-          ></textarea>
-        </div>
+
+        <Input
+          name="firstname"
+          type="text"
+          placeholder-text=""
+          :required="true"
+          label-text="Förnamn:"
+        />
+
+        <Input
+          name="lastname"
+          type="text"
+          placeholder-text=""
+          :required="true"
+          label-text="Efternamn:"
+        />
+
+        <Input
+          name="email"
+          type="email"
+          placeholder-text=""
+          :required="true"
+          label-text="Email:"
+        />
+
+        <Input
+          name="phone"
+          type="tel"
+          placeholder-text=""
+          :required="true"
+          label-text="Telefon:"
+        />
+
+        <Input
+          name="company"
+          type="text"
+          placeholder-text=""
+          :required="true"
+          label-text="Företag:"
+        />
+
+        <Input
+          class="col-span-1 md:col-span-2"
+          name="message"
+          type="message"
+          placeholder-text=""
+          :required="true"
+          label-text="Meddelande:"
+        />
+
         <div class="hide1">
           <input
             maxlength="256"
@@ -105,10 +108,12 @@
             v-model="extraFields.amex"
           />
         </div>
-        <div class="spacer-m contact"></div>
-        <div class="grid-2-col">
+
+        <div class="">
+          <Button text="Skicka" link="/case" />
+
           <button
-            class="button border w-button"
+            class="button w-button border"
             type="submit"
             data-wait="Vänta..."
             @click="sendForm"

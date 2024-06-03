@@ -1,7 +1,7 @@
 <template>
-  <div class="content">
-    <div class="content-info homepages">
-      <h5 class="heading3">Hemsidor</h5>
+  <div class="mb-16 mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
+    <div class="h-fit self-center p-4">
+      <h5 class="text-3xl md:text-4xl">Hemsidor</h5>
       <p>
         En professionell hemsida är ett måste-ha för alla företag idag. Det är
         där dina kunder och klienter förväntar sig att hitta information om dig
@@ -16,10 +16,8 @@
     </div>
     <a href="https://kinnahusvagnsservice.se" target="_blank">
       <img
-        class="image contain"
+        class="h-full w-full object-cover duration-500 ease-in-out hover:scale-[1.01]"
         loading="lazy"
-        width="auto"
-        height="auto"
         alt=""
         src="../assets/kinnahusvagnsservice.jpg"
       />

@@ -4,7 +4,7 @@ import Button from "../elements/Button.vue";
 
 <template>
   <div
-    class="grid-cols-thin md:grid-cols-slim relative mb-16 mt-4 grid min-h-0 py-12"
+    class="relative mb-16 mt-4 grid min-h-0 grid-cols-thin py-12 md:grid-cols-slim"
   >
     <div
       class="absolute bottom-0 left-0 right-0 top-0 flex items-center overflow-hidden"
@@ -18,7 +18,7 @@ import Button from "../elements/Button.vue";
     </div>
     <div class="absolute bottom-0 left-0 right-0 top-0 bg-black/25"></div>
     <div
-      class="center relative col-start-2 col-end-2 row-start-1 row-end-1 flex w-full flex-col items-start py-8"
+      class="center relative col-start-2 col-end-2 flex w-full flex-col items-start py-8"
     >
       <h3 class="text-3xl md:text-4xl">Reklamfilmer</h3>
       <p class="pb-8 text-white">
