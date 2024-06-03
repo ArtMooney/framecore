@@ -12,6 +12,7 @@
       :type="type"
       :placeholder="placeholderText"
       :required="required"
+      :value="value"
     />
 
     <textarea
@@ -21,6 +22,7 @@
       :name="name"
       :placeholder="placeholderText"
       :required="required"
+      :value="value"
     ></textarea>
   </div>
 </template>
@@ -49,6 +51,10 @@ export default {
     labelText: {
       type: String,
       required: true,
+    },
+    value: {
+      type: String,
+      required: false,
     },
   },
 };

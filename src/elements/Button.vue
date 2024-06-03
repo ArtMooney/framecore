@@ -1,9 +1,12 @@
 <template>
-  <a
-    class="font-exo min-w-40 rounded bg-white/95 px-6 py-2 text-base text-black no-underline duration-500 ease-in-out hover:-translate-x-1 hover:text-black/75"
-    :href="link"
-    >{{ text }}</a
+  <button
+    @click="$router.push(link)"
+    class="min-w-40 rounded bg-white/95 px-6 py-3 text-center font-exo text-base text-black no-underline duration-500 ease-in-out hover:-translate-x-2 hover:bg-neutral-200 hover:text-black/75"
+    :type="type"
+    :data-wait="dataWait"
   >
+    {{ text }}
+  </button>
 </template>
 
 <script>
@@ -16,6 +19,14 @@ export default {
       required: true,
     },
     link: {
+      type: String,
+      required: true,
+    },
+    type: {
+      type: String,
+      required: true,
+    },
+    dataWait: {
       type: String,
       required: true,
     },

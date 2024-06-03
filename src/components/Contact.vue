@@ -71,65 +71,71 @@ import Input from "../elements/Input.vue";
           label-text="Meddelande:"
         />
 
-        <div class="hide1">
-          <input
-            maxlength="256"
+        <div class="hidden">
+          <Input
             name="clientip"
-            placeholder="clientip"
             type="text"
-            v-model="extraFields.clientip"
+            placeholder-text="clientip"
+            :required="false"
+            label-text=""
+            :value="extraFields.clientip"
           />
-          <input
-            maxlength="256"
+
+          <Input
             name="pageuri"
-            placeholder="pageuri"
             type="text"
-            v-model="extraFields.pageuri"
+            placeholder-text="pageuri"
+            :required="false"
+            label-text=""
+            :value="extraFields.pageuri"
           />
-          <input
-            maxlength="256"
+
+          <Input
             name="pagename"
-            placeholder="pagename"
             type="text"
-            v-model="extraFields.pagename"
+            placeholder-text="pagename"
+            :required="false"
+            label-text=""
+            :value="extraFields.pagename"
           />
-          <input
-            maxlength="256"
+
+          <Input
             name="hubspotutk"
-            placeholder="hubspotutk"
             type="text"
-            v-model="extraFields.hubspotutk"
+            placeholder-text="hubspotutk"
+            :required="false"
+            label-text=""
+            :value="extraFields.hubspotutk"
           />
-          <input
-            maxlength="256"
+
+          <Input
             name="amex"
-            placeholder="amex"
             type="text"
-            v-model="extraFields.amex"
+            placeholder-text="amex"
+            :required="false"
+            label-text=""
+            :value="extraFields.amex"
           />
         </div>
 
-        <div class="">
-          <Button text="Skicka" link="/case" />
-
-          <button
-            class="button w-button border"
+        <div class="flex items-start pt-8">
+          <Button
+            @click="sendForm"
+            text="Skicka"
+            link=""
             type="submit"
             data-wait="Vänta..."
-            @click="sendForm"
-          >
-            Skicka
-          </button>
+          />
         </div>
       </form>
 
-      <div v-if="successMessage" class="success-message">
+      <div v-if="successMessage">
         <div>
           Tack för ert meddelande!<br /><br />Vi återkommer till er snart!<br /><br /><br /><br /><br />‍
         </div>
       </div>
 
-      <div v-if="errorMessage" class="error-message">
+      <div v-if="errorMessage" class="bg-pink-100 p-4 text-black">
         <p>{{ defaultEmailMessage }}</p>
       </div>
     </div>
