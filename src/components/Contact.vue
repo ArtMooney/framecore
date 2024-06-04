@@ -121,7 +121,7 @@ import Input from "../elements/Input.vue";
         <div class="flex items-start pt-8">
           <Button
             @click="sendForm"
-            text="Skicka"
+            :text="buttonText"
             link=""
             type="submit"
             data-wait="Vänta..."
@@ -166,6 +166,7 @@ export default {
       contactForm: true,
       successMessage: false,
       errorMessage: false,
+      buttonText: "Skicka",
     };
   },
 
@@ -181,6 +182,8 @@ export default {
 
       if (this.requiredFields(event.target.form)) {
         let res;
+        const savedText = this.buttonText;
+        this.buttonText = event.target.dataset.wait;
 
         try {
           res = await fetch(this.formWebhook, {
@@ -200,16 +203,17 @@ export default {
             this.errorMessage = true;
           } else {
             console.log("success");
-            event.target.value = event.target.dataset.wait;
 
             setTimeout(() => {
               this.contactForm = false;
               this.successMessage = true;
+              this.buttonText = savedText;
             }, 1500);
           }
         } catch (error) {
           console.error("An error occurred:", error);
           this.errorMessage = true;
+          this.buttonText = savedText;
         }
       } else {
         event.target.disabled = false;
