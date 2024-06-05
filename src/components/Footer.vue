@@ -6,34 +6,76 @@ import ArrowUp from "../assets/ArrowUp.vue";
 </script>
 
 <template>
-  <div class="content footer center">
-    <a class="footer-logo w-inline-block" href="/">
+  <div
+    class="relative mb-8 mt-4 grid grid-cols-1 gap-4 bg-footer-gradient py-20"
+  >
+    <a
+      class="w-32 justify-self-center pb-4 duration-500 ease-in-out hover:scale-[1.02] md:w-44"
+      href="/"
+    >
       <img src="../assets/Framecore-light-gray.svg" alt="" />
     </a>
-    <div class="footerlink-block center">
-      <div class="spacer-s"></div>
-      <router-link class="footerlink" :to="{ path: '/', hash: '#services' }">
+    <div class="flex flex-col items-center justify-self-center">
+      <router-link
+        class="mb-3 text-neutral-400 no-underline hover:text-neutral-300"
+        :to="{ path: '/', hash: '#services' }"
+      >
         Tjänster
       </router-link>
-      <a class="footerlink" href="/case">Kunder & Case</a>
-      <a class="footerlink" href="/contact">Kontakta oss</a>
+      <a
+        class="mb-3 text-neutral-400 no-underline hover:text-neutral-300"
+        href="/case"
+        >Kunder & Case</a
+      >
+      <a
+        class="mb-3 text-neutral-400 no-underline hover:text-neutral-300"
+        href="/contact"
+        >Kontakta oss</a
+      >
     </div>
-    <div class="footer-line"></div>
-    <div class="some-wrapper">
-      <router-link to="/" class="some-icon house">
+    <div
+      class="mb-8 mt-4 h-0.5 w-2/3 justify-self-center bg-neutral-500/75"
+    ></div>
+    <div
+      class="grid grid-flow-col justify-start gap-1 justify-self-center duration-500 ease-in-out hover:gap-3"
+    >
+      <router-link
+        to="/"
+        class="h-5 w-5 text-neutral-400 duration-500 ease-in-out hover:text-neutral-300"
+      >
         <House />
       </router-link>
-      <Star class="some-icon star" />
-      <Heart class="some-icon heart" />
-      <router-link class="some-icon arrow" :to="{ hash: '#navbar' }">
+
+      <div class="group">
+        <Star
+          class="h-5 w-5 text-neutral-400 duration-500 ease-in-out hover:text-neutral-300"
+        />
+        <div
+          class="absolute bottom-7 left-auto right-auto top-auto -ml-12 rounded bg-black/55 px-3 py-1.5 text-sm opacity-0 duration-300 ease-in-out group-hover:ml-0 group-hover:opacity-100"
+        >
+          You are amazing!
+        </div>
+      </div>
+
+      <div class="group">
+        <Heart
+          class="h-5 w-5 text-neutral-400 duration-500 ease-in-out hover:text-neutral-300"
+        />
+        <div
+          class="absolute bottom-7 left-auto right-auto top-auto -ml-12 flex items-center rounded bg-black/55 px-3 py-1.5 text-sm opacity-0 duration-300 ease-in-out group-hover:ml-0 group-hover:opacity-100"
+        >
+          This website was made with
+          <Heart class="mx-1 h-4 w-5 text-red-500" />
+          by FrameCore 2024
+        </div>
+      </div>
+
+      <router-link
+        class="h-4 w-4 text-neutral-400 duration-500 ease-in-out hover:text-neutral-300"
+        :to="{ hash: '#navbar' }"
+      >
         <ArrowUp />
       </router-link>
-      <div class="footer-blob heart">
-        This website was made with
-        <Heart class="heart-red" />
-        by FrameCore 2024
-      </div>
-      <div class="footer-blob star">You are amazing!</div>
     </div>
   </div>
 </template>
@@ -43,15 +85,3 @@ export default {
   name: "Footer",
 };
 </script>
-
-<style scoped>
-.some-icon.heart:hover ~ .footer-blob.heart {
-  margin-left: 0;
-  opacity: 1;
-}
-
-.some-icon.star:hover ~ .footer-blob.star {
-  margin-left: 0;
-  opacity: 1;
-}
-</style>
