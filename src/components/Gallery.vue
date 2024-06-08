@@ -7,8 +7,8 @@ import Xmark from "../assets/Xmark.vue";
 </script>
 
 <template>
-  <div class="gallery-app">
-    <div v-if="galleryLoader" class="gallery-loader">
+  <div class="flex flex-col">
+    <div v-if="galleryLoader" class="flex justify-center">
       <Vue3Lottie
         ref="lottieSandwich"
         :animationData="loading"
@@ -17,40 +17,63 @@ import Xmark from "../assets/Xmark.vue";
       />
     </div>
 
-    <div v-if="galleryLightbox" class="gallery-lightbox">
-      <div class="image lightbox source-wrapper">
-        <img v-if="imageOrVideo" class="image lightbox" :src="imageLightbox" />
-        <div v-if="!imageOrVideo" class="image lightbox">
+    <div
+      v-if="galleryLightbox"
+      class="fixed bottom-0 left-0 right-0 top-0 z-50 flex items-center justify-center bg-black/75"
+    >
+      <div class="relative flex content-center justify-center object-contain">
+        <img
+          v-if="imageOrVideo"
+          class="relative flex items-center justify-center object-contain p-0 transition-transform duration-300 ease-in-out hover:scale-[1.01] sm:p-20"
+          :src="imageLightbox"
+        />
+        <div
+          v-if="!imageOrVideo"
+          class="relative flex items-center justify-center object-contain p-0 transition-transform duration-300 ease-in-out hover:scale-[1.01] sm:p-20"
+        >
           <video ref="videoplayer" muted playsinline autoplay>
             <source :src="imageLightbox" />
           </video>
         </div>
       </div>
-      <div class="lightbox-arrow left">
-        <div class="gallery-arrow" @click="leftArrow">
+      <div
+        class="absolute bottom-0 left-0 right-auto top-0 flex items-center justify-center p-4"
+      >
+        <div
+          class="flex h-12 w-12 cursor-pointer items-center rounded-full border-2 border-solid border-white p-4 hover:opacity-75"
+          @click="leftArrow"
+        >
           <ChevronLeft style="width: 3rem; height: 3rem" />
         </div>
       </div>
-      <div class="lightbox-arrow right">
-        <div class="gallery-arrow" @click="rightArrow">
+      <div
+        class="absolute bottom-0 left-auto right-0 top-0 flex items-center justify-center p-4"
+      >
+        <div
+          class="flex h-12 w-12 cursor-pointer items-center rounded-full border-2 border-solid border-white p-4 hover:opacity-75"
+          @click="rightArrow"
+        >
           <ChevronRight style="width: 3rem; height: 3rem" />
         </div>
       </div>
-      <div class="lightbox-close">
-        <div class="gallery-close">
+      <div class="absolute bottom-auto left-auto right-4 top-4 cursor-pointer">
+        <div class="w- inline-block h-6 w-6 hover:opacity-75">
           <Xmark @click="galleryClose" />
         </div>
       </div>
     </div>
 
-    <div class="content gallery">
-      <div v-show="displayGallery" class="gallery-wrapper">
-        <div class="gallery-item" v-for="(image, index) of images">
+    <div class="relative mb-8">
+      <div
+        v-show="displayGallery"
+        class="columns-1 gap-4 sm:columns-2 md:columns-3"
+      >
+        <div class="mb-4 cursor-pointer" v-for="(image, index) of images">
           <img
             :src="`${thumbsBaseUrl}${image.thumbname}?${getRandomNumber}`"
             @click="showItem($event, index)"
             @load="galleryItemLoaded"
-            class="image"
+            class="h-full w-full object-cover transition-transform duration-300 ease-in-out hover:scale-[1.01]"
           />
         </div>
       </div>
