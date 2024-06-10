@@ -4,15 +4,14 @@ import NavbarLink from "../elements/NavbarLink.vue";
 import Cube from "../assets/Cube.vue";
 import MugHot from "../assets/MugHot.vue";
 import sandwich from "../assets/burger-menu.json";
+import Button from "../elements/Button.vue";
 </script>
 
 <template>
-  <!--    <div id="navbar" class="content navbar">-->
   <div
     id="navbar"
     class="relative z-10 mb-4 mt-0 grid grid-cols-2 items-stretch justify-stretch justify-items-stretch gap-4 overflow-visible pb-0 pt-4 sm:grid-cols-[0.5fr,1fr] md:grid-cols-[0.25fr,1fr]"
   >
-    <!--    <a href="/" class="navbar-logo"-->
     <a
       href="/"
       class="flex w-[86%] items-center transition-all duration-500 ease-in-out hover:m-2"
@@ -22,25 +21,37 @@ import sandwich from "../assets/burger-menu.json";
         class="h-full w-full object-contain"
     /></a>
 
-    <!--    <Transition name="navbar-links">-->
-    <!--      <div v-if="mobileMenu" class="navbar-links">-->
-    <!--      class="col-auto grid h-full auto-cols-max auto-rows-auto grid-cols-1 content-end items-stretch justify-end gap-1"-->
     <div
-      v-if="mobileMenu"
-      class="grid grid-flow-col content-end items-stretch justify-end gap-4 bg-transparent"
+      class="absolute bottom-auto left-auto justify-items-end gap-4 bg-[#444442] px-6 py-10 transition-all duration-200 ease-in-out lg:static lg:grid lg:grid-flow-col lg:content-end lg:items-stretch lg:justify-end lg:bg-transparent lg:p-0"
+      :class="[
+        navbarClicked ? 'opacity-100' : 'opacity-0 lg:opacity-100',
+        navbarClicked ? 'right-6 top-16' : 'right-2 top-0',
+        hideMobileNav ? 'hidden' : 'grid',
+      ]"
     >
-      <NavbarLink path="/" hash="#services" :icon="Cube">Tjänster</NavbarLink>
-      <NavbarLink path="/case" hash="" :icon="MugHot"
+      <NavbarLink
+        path="/"
+        hash="#services"
+        :icon="Cube"
+        @click="closeMobileMenu"
+        >Tjänster
+      </NavbarLink>
+      <NavbarLink path="/case" hash="" :icon="MugHot" @click="closeMobileMenu"
         >Kunder &amp; Case
       </NavbarLink>
-
-      <a href="/contact" class="button navbutton w-button border"
-        >Kontakta oss</a
-      >
+      <Button
+        text="Kontakta oss"
+        link="/contact"
+        type="button"
+        data-wait=""
+        @click="closeMobileMenu"
+      />
     </div>
-    <!--    </Transition>-->
 
-    <div class="navbar-sandwich large" @click="mobileMenu = !mobileMenu">
+    <div
+      class="relative block h-8 w-8 cursor-pointer select-none items-center justify-self-end invert hover:opacity-75 sm:h-10 sm:w-10 lg:hidden"
+      @click="mobileMenu"
+    >
       <Vue3Lottie
         ref="lottieSandwich"
         :animationData="sandwich"
@@ -57,48 +68,39 @@ export default {
 
   data() {
     return {
-      mobileMenu: window.innerWidth > 991 ? true : false,
-      screenWidth: window.innerWidth,
+      navbarClicked: false,
+      hideMobileNav: true,
     };
   },
 
-  created() {
-    window.addEventListener("resize", this.updateScreenWidth);
-  },
-
-  destroyed() {
-    window.removeEventListener("resize", this.updateScreenWidth);
-  },
-
   methods: {
-    updateScreenWidth() {
-      this.screenWidth = window.innerWidth;
-    },
-  },
-
-  watch: {
     mobileMenu() {
-      if (this.mobileMenu) {
+      if (!this.navbarClicked) {
         this.$refs.lottieSandwich.setSpeed(2);
         this.$refs.lottieSandwich.playSegments([7, 25], true);
       } else {
         this.$refs.lottieSandwich.setSpeed(2);
         this.$refs.lottieSandwich.playSegments([25, 7], true);
       }
-    },
-    screenWidth() {
-      if (this.screenWidth > 991) {
-        this.mobileMenu = true;
+
+      if (this.hideMobileNav) {
+        this.hideMobileNav = false;
+
+        setTimeout(() => {
+          this.navbarClicked = !this.navbarClicked;
+        }, 0);
       } else {
-        this.mobileMenu = false;
+        this.navbarClicked = !this.navbarClicked;
+        this.hideMobileNav = !this.hideMobileNav;
       }
+    },
+
+    closeMobileMenu() {
+      this.navbarClicked = false;
+      this.hideMobileNav = true;
+      this.$refs.lottieSandwich.setSpeed(2);
+      this.$refs.lottieSandwich.playSegments([25, 7], true);
     },
   },
 };
 </script>
-
-<style scoped>
-.navlink:hover .navicon.blur {
-  opacity: 100%;
-}
-</style>

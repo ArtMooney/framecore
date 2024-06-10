@@ -10,7 +10,7 @@ import Input from "../elements/Input.vue";
     <div class="col-span-1 md:col-start-2 md:col-end-2">
       <form
         v-if="contactForm"
-        class="grid grid-cols-1 text-white md:grid-cols-2 md:gap-4"
+        class="grid grid-cols-1 gap-4 text-white md:grid-cols-2"
         name="kontakta-oss"
       >
         <div class="col-span-1 md:col-span-2">
