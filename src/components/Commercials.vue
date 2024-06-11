@@ -28,7 +28,13 @@ import Button from "../elements/Button.vue";
         för det som reklamen handlar om.
       </p>
 
-      <Button text="Kunder & Case" link="/case" type="button" data-wait="" />
+      <Button
+        text="Kunder & Case"
+        link="/case"
+        hash=""
+        type="button"
+        data-wait=""
+      />
     </div>
   </div>
 </template>

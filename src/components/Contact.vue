@@ -123,6 +123,7 @@ import Input from "../elements/Input.vue";
             @click="sendForm"
             :text="buttonText"
             link=""
+            hash=""
             type="submit"
             data-wait="Vänta..."
           />
