@@ -51,7 +51,7 @@ import ArrowUp from "../assets/ArrowUp.vue";
           class="h-5 w-5 text-neutral-400 duration-500 ease-in-out hover:text-neutral-300"
         />
         <div
-          class="absolute bottom-7 left-auto right-auto top-auto -ml-12 rounded bg-black/55 px-3 py-1.5 text-sm opacity-0 duration-300 ease-in-out group-hover:ml-0 group-hover:opacity-100"
+          class="absolute bottom-7 left-auto right-auto top-auto -ml-12 hidden rounded bg-black/55 px-3 py-1.5 text-sm opacity-0 duration-300 ease-in-out group-hover:ml-0 group-hover:opacity-100 md:flex"
         >
           You are amazing!
         </div>
@@ -62,7 +62,7 @@ import ArrowUp from "../assets/ArrowUp.vue";
           class="h-5 w-5 text-neutral-400 duration-500 ease-in-out hover:text-neutral-300"
         />
         <div
-          class="absolute bottom-7 left-auto right-auto top-auto -ml-12 flex items-center rounded bg-black/55 px-3 py-1.5 text-sm opacity-0 duration-300 ease-in-out group-hover:ml-0 group-hover:opacity-100"
+          class="absolute bottom-7 left-auto right-auto top-auto -ml-12 hidden items-center rounded bg-black/55 px-3 py-1.5 text-sm opacity-0 duration-300 ease-in-out group-hover:ml-0 group-hover:opacity-100 md:flex"
         >
           This website was made with
           <Heart class="mx-1 h-4 w-5 text-red-500" />
