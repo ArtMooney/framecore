@@ -13,7 +13,6 @@
         "plyr": "^3.7.8",
         "postcss": "^8.4.38",
         "purgecss": "^5.0.0",
-        "vite-plugin-purgecss": "^0.2.12",
         "vue": "^3.3.11",
         "vue-meta": "^2.4.0",
         "vue-router": "^4.3.0",
