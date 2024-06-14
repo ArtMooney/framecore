@@ -21,5 +21,4 @@ export default {
   corePlugins: {
     preflight: true,
   },
-  mode: "jit",
 };
