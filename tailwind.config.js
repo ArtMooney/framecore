@@ -19,7 +19,7 @@ export default {
   },
   plugins: [],
   corePlugins: {
-    preflight: false,
+    preflight: true,
   },
   mode: "jit",
 };
