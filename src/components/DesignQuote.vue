@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-8 mt-4 grid grid-cols-1 gap-4 py-8">
+  <div class="mt-4 grid grid-cols-1 gap-4 py-8">
     <blockquote>
       &quot;Design is not just what it looks like and feels like. Design is how
       it works.&quot; - Steve Jobs

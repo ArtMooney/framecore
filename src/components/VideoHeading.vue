@@ -1,5 +1,9 @@
+<script setup>
+import Button from "../elements/Button.vue";
+</script>
+
 <template>
-  <div class="relative grid grid-cols-1 md:grid-cols-[0.25fr,1fr,0.25fr]">
+  <div class="relative grid grid-cols-1 md:grid-cols-slim">
     <video
       class="col-start-1 col-end-4 row-start-1 row-end-1 h-full w-full items-stretch justify-items-stretch object-cover"
       muted=""
@@ -13,7 +17,7 @@
     <div class="absolute bottom-0 left-0 right-0 top-0 bg-black/25"></div>
 
     <div
-      class="relative col-start-2 col-end-2 row-start-1 row-end-1 flex flex-col items-start justify-center p-8"
+      class="relative col-start-2 col-end-2 row-start-1 row-end-1 flex flex-col items-start justify-center p-12 md:p-0"
     >
       <h1 class="text-4xl md:text-5xl">
         Kreativa lösningar för webb och animation
@@ -37,10 +41,7 @@
 </template>
 
 <script>
-import Button from "../elements/Button.vue";
-
 export default {
   name: "VideoHeading",
-  components: { Button },
 };
 </script>

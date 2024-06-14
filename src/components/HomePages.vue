@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-16 mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
+  <div class="my-4 mb-16 grid grid-cols-1 gap-4 md:grid-cols-2">
     <div class="h-fit self-center p-4">
       <h5 class="text-3xl md:text-4xl">Hemsidor</h5>
       <p>

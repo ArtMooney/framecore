@@ -1,12 +1,15 @@
 <template>
-  <div id="services" class="mb-16 mt-4 grid grid-cols-1 gap-4 md:grid-cols-3">
+  <div
+    id="services"
+    class="my-4 grid grid-cols-1 gap-0 md:grid-cols-3 md:gap-6"
+  >
     <img
       src="../assets/Hand_new_utkast06.jpg"
       loading="lazy"
       alt=""
       class="h-full w-full object-cover duration-500 ease-in-out hover:scale-[1.01]"
     />
-    <div class="col-span-2 h-fit self-center p-4">
+    <div class="col-span-2 h-fit self-center px-8 py-4 md:px-0">
       <h2 class="text-3xl md:text-4xl">Animationer &amp; visualiseringar</h2>
       <p>
         3D visualiseringar är en kraftfull metod för att presentera information,
