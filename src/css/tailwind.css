@@ -7,7 +7,12 @@
     @apply flex flex-col justify-between bg-neutral-900 font-noto text-lg font-normal leading-6 text-white;
   }
 
-  h1 {
-    @apply mb-4 mt-0 font-exo text-9xl font-bold leading-none;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply mb-4 mt-0 font-exo font-bold leading-none;
   }
 }
