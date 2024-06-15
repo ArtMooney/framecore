@@ -25,7 +25,7 @@ import Button from "../elements/Button.vue";
         Kreativa lösningar för webb och animation
       </h1>
 
-      <p class="pb-8 text-white">
+      <p class="max-w-prose pb-8 text-white">
         Vi erbjuder anpassade webb- och 3D-animationstjänster för att hjälpa
         ditt företag att skapa nytta. Kontakta oss idag för en kostnadsfri
         konsultation.
