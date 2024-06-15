@@ -4,7 +4,7 @@ import Button from "../elements/Button.vue";
 
 <template>
   <div
-    class="relative my-4 grid min-h-0 grid-cols-1 px-8 py-12 md:grid-cols-slim md:px-0"
+    class="relative my-4 grid grid-cols-1 px-8 py-12 md:grid-cols-slim md:px-0"
   >
     <div
       class="absolute bottom-0 left-0 right-0 top-0 flex items-center overflow-hidden"

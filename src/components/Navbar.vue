@@ -25,7 +25,7 @@ import Button from "../elements/Button.vue";
       class="absolute bottom-auto left-auto justify-items-end gap-4 bg-[#444442] px-6 py-10 transition-all duration-200 ease-in-out lg:static lg:grid lg:grid-flow-col lg:content-end lg:items-stretch lg:justify-end lg:bg-transparent lg:p-0"
       :class="[
         navbarClicked ? 'opacity-100' : 'opacity-0 lg:opacity-100',
-        navbarClicked ? 'right-6 top-16' : 'right-2 top-0',
+        navbarClicked ? 'right-6 top-14' : 'right-2 top-0',
         hideMobileNav ? 'hidden' : 'grid',
       ]"
     >
@@ -88,7 +88,7 @@ export default {
 
         setTimeout(() => {
           this.navbarClicked = !this.navbarClicked;
-        }, 0);
+        }, 1);
       } else {
         this.navbarClicked = !this.navbarClicked;
         this.hideMobileNav = !this.hideMobileNav;

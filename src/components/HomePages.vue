@@ -1,6 +1,6 @@
 <template>
   <div class="my-4 mb-16 grid grid-cols-1 gap-4 md:grid-cols-2">
-    <div class="h-fit self-center p-4">
+    <div class="h-fit self-center p-8">
       <h5 class="text-3xl md:text-4xl">Hemsidor</h5>
       <p>
         En professionell hemsida är ett måste-ha för alla företag idag. Det är
