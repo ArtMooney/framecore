@@ -13,7 +13,7 @@ import Contact from "../components/Contact.vue";
 <script>
 export default {
   name: "Contact",
-  metaInfo: {
+  head: {
     title: "Kontakta Oss - Webb- och 3D-Animationstjänster | FrameCore 2024",
     meta: [
       {

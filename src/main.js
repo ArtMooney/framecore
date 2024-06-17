@@ -3,5 +3,7 @@ import "./css/fonts.css";
 import "./css/tailwind.css";
 import App from "./App.vue";
 import createRouter from "./routes";
+import { VueHeadMixin, createHead } from "@unhead/vue";
 
-createApp(App).use(createRouter()).mount("#app");
+const head = createHead();
+createApp(App).use(head).use(createRouter()).mixin(VueHeadMixin).mount("#app");

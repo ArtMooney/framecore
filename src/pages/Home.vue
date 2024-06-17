@@ -24,7 +24,8 @@ import HomePages from "../components/HomePages.vue";
 <script>
 export default {
   name: "Home",
-  metaInfo: {
+
+  head: {
     title:
       "Webb- och 3D-Animationstjänster | Kreativa Lösningar | FrameCore 2024",
     meta: [

@@ -13,14 +13,14 @@ import NotFound from "../components/NotFound.vue";
 <script>
 export default {
   name: "NotFound",
-  metaInfo: {
+  head: {
     title: "",
     meta: [
       {
         name: "keywords",
         content: "",
       },
-      { name: "robots", content: "index, follow" },
+      { name: "robots", content: "noindex, nofollow" },
       {
         name: "description",
         content: "",

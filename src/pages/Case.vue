@@ -13,7 +13,7 @@ import Gallery from "../components/Gallery.vue";
 <script>
 export default {
   name: "Case",
-  metaInfo: {
+  head: {
     title: "Galleri - Webb- och 3D-Animationstjänster | FrameCore 2024",
     meta: [
       {
