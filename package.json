@@ -9,6 +9,7 @@
         "preview": "vite preview"
     },
     "dependencies": {
+        "@storyblok/vue": "^8.0.8",
         "@unhead/vue": "^1.9.13",
         "plyr": "^3.7.8",
         "vue": "^3.3.11",
@@ -16,6 +17,7 @@
         "vue3-lottie": "^3.2.0"
     },
     "devDependencies": {
+        "@vitejs/plugin-basic-ssl": "^1.1.0",
         "@vitejs/plugin-vue": "^4.5.2",
         "autoprefixer": "^10.4.19",
         "postcss": "^8.4.38",

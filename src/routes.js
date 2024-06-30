@@ -7,7 +7,7 @@ export default () =>
       {
         path: "/",
         name: "Home",
-        component: () => import("./pages/Home.vue"),
+        component: () => import("./pages/HomeNew.vue"),
         props: true,
       },
       {
