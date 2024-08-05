@@ -10,7 +10,7 @@ import Button from "../elements/Button.vue";
       class="absolute bottom-0 left-0 right-0 top-0 flex items-center overflow-hidden"
     >
       <img
-        class="parallax_background min-h-screen w-full object-cover"
+        class="parallax_background min-h-[60rem] w-full object-cover"
         loading="lazy"
         alt=""
         src="../assets/safsen_snapshot.jpg"
