@@ -28,6 +28,7 @@ import Input from "../elements/Input.vue";
           placeholder-text=""
           :required="true"
           label-text="Förnamn:"
+          auto-complete="given-name"
         />
 
         <Input
@@ -36,6 +37,7 @@ import Input from "../elements/Input.vue";
           placeholder-text=""
           :required="true"
           label-text="Efternamn:"
+          auto-complete="family-name"
         />
 
         <Input
@@ -44,6 +46,7 @@ import Input from "../elements/Input.vue";
           placeholder-text=""
           :required="true"
           label-text="Email:"
+          auto-complete="email"
         />
 
         <Input
@@ -52,6 +55,7 @@ import Input from "../elements/Input.vue";
           placeholder-text=""
           :required="true"
           label-text="Telefon:"
+          auto-complete="tel"
         />
 
         <Input
@@ -60,6 +64,7 @@ import Input from "../elements/Input.vue";
           placeholder-text=""
           :required="true"
           label-text="Företag:"
+          auto-complete="organization"
         />
 
         <Input
@@ -69,6 +74,7 @@ import Input from "../elements/Input.vue";
           placeholder-text=""
           :required="true"
           label-text="Meddelande:"
+          auto-complete="off"
         />
 
         <div class="hidden">

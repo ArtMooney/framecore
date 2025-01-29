@@ -13,6 +13,7 @@
       :placeholder="placeholderText"
       :required="required"
       :value="value"
+      :autocomplete="autoComplete ? autoComplete : 'off'"
     />
 
     <textarea
@@ -23,6 +24,7 @@
       :placeholder="placeholderText"
       :required="required"
       :value="value"
+      :autocomplete="autoComplete ? autoComplete : 'off'"
     ></textarea>
   </div>
 </template>
@@ -53,6 +55,10 @@ export default {
       required: true,
     },
     value: {
+      type: String,
+      required: false,
+    },
+    autoComplete: {
       type: String,
       required: false,
     },
