@@ -13,7 +13,7 @@ export const onRequestPost = async (context) => {
   const url = new URL(context.request.url);
   const env = await context.env;
 
-  if (!(await checkLogin(context.request.headers, env.userName, env.userPass)))
+  if (!(await checkLogin(context.request.headers, env.USERNAME, env.USERPASS)))
     return new Response(JSON.stringify({ error: "Login failed" }), {
       headers: corsHeaders,
     });
@@ -31,20 +31,20 @@ export const onRequestPost = async (context) => {
 
   // to FrameCore
   await sendEmail(
-    env.from,
-    env.to,
+    env.EMAIL_FROM,
+    env.EMAIL_TO,
     "Kontakt via hemsidan",
     JSON.stringify(formDataJson, null, 2),
-    env.mailgunApiKey,
+    env.MAILGUN_API_KEY,
   );
 
   // to Contact
   await sendEmail(
-    env.to,
+    env.EMAIL_TO,
     formDataJson.email,
     "Tack för att ni kontaktat FrameCore!",
     await getWelcomeMessage(formDataJson.firstname),
-    env.mailgunApiKey,
+    env.MAILGUN_API_KEY,
   );
 
   return new Response(JSON.stringify("ok"), { headers: corsHeaders });

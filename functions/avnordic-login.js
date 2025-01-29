@@ -8,7 +8,7 @@ export const onRequestPost = async ({ request, env, ctx }) => {
 
   const url = new URL(request.url);
 
-  if (!(await checkLogin(request.headers, env.userName, env.userPass)))
+  if (!(await checkLogin(request.headers, env.USERNAME, env.USERPASS)))
     return new Response(JSON.stringify({ error: "Login failed" }), {
       headers: corsHeaders,
     });

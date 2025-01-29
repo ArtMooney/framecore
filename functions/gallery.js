@@ -17,32 +17,32 @@ export const onRequestGet = async (context) => {
   const url = new URL(context.request.url);
   const env = await context.env;
 
-  if (!(await checkLogin(context.request.headers, env.userName, env.userPass)))
+  if (!(await checkLogin(context.request.headers, env.USERNAME, env.USERPASS)))
     return new Response(JSON.stringify({ error: "Login failed" }), {
       headers: corsHeaders,
     });
 
-  const containerFolderId = env.containerFolderId;
-  const galleryFolderId = env.galleryFolderId;
-  const thumbsFolderId = env.thumbsFolderId;
-
   const generateGallery = await isChangedFolders(
-    env.pcloudToken,
-    containerFolderId,
+    env.PCLOUD_TOKEN,
+    env.CONTAINER_FOLDER_ID,
   );
 
   if (generateGallery.changed) {
     const processFile = await uploadProcessFile(
-      env.pcloudToken,
-      containerFolderId,
+      env.PCLOUD_TOKEN,
+      env.CONTAINER_FOLDER_ID,
     );
 
-    await deleteOldThumbs(env.pcloudToken, thumbsFolderId);
-    await saveThumbs(env.pcloudToken, galleryFolderId, thumbsFolderId);
-    await deleteFile(env.pcloudToken, processFile.fileid);
+    await deleteOldThumbs(env.PCLOUD_TOKEN, env.THUMBS_FOLDER_ID);
+    await saveThumbs(
+      env.PCLOUD_TOKEN,
+      env.GALLERY_FOLDER_ID,
+      env.THUMBS_FOLDER_ID,
+    );
+    await deleteFile(env.PCLOUD_TOKEN, processFile.fileid);
   }
 
-  const gallery = await listFolder(env.pcloudToken, galleryFolderId);
+  const gallery = await listFolder(env.PCLOUD_TOKEN, env.GALLERY_FOLDER_ID);
   const output = [];
 
   for (const item of gallery) {
