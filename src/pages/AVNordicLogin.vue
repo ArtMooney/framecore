@@ -6,9 +6,12 @@ import Button from "../elements/Button.vue";
   <div
     class="grid-rows-auto mx-auto grid w-full max-w-screen-2xl grid-cols-1 px-4 sm:px-4"
   >
-    <div class="justify-self-center pb-4">Login to AV Nordic Sync</div>
+    <div v-if="!loginStatus" class="justify-self-center pb-4">
+      Login to AV Nordic Sync
+    </div>
 
     <Button
+      v-if="!loginStatus"
       text="Login"
       :link="loginUrl"
       hash=""
@@ -17,19 +20,16 @@ import Button from "../elements/Button.vue";
       :open-external="true"
       class="justify-self-center"
     />
+
+    <div v-if="loginStatus" class="justify-self-center pb-4">
+      You have now logged in.
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: "AV Nordic Login",
-
-  data() {
-    return {
-      loginUrl:
-        "https://apps.fortnox.se/oauth-v1/auth?client_id=fVp5nL0auRhD&redirect_uri=https://www.framecore.se/avnordic-login&scope=customer%20invoice%20settings%20article%20price%20order%20offer&state=somestate123&access_type=offline&response_type=code",
-    };
-  },
 
   head: {
     title: "",
@@ -56,6 +56,46 @@ export default {
         content: "",
       },
     ],
+  },
+
+  data() {
+    return {
+      userName: `${import.meta.env.VITE_USERNAME}`,
+      userPass: `${import.meta.env.VITE_USERPASS}`,
+      loginUrl:
+        "https://apps.fortnox.se/oauth-v1/auth?client_id=fVp5nL0auRhD&redirect_uri=https://www.framecore.se/avnordic-login&scope=customer%20invoice%20settings%20article%20price%20order%20offer&state=somestate123&access_type=offline&response_type=code",
+      loginStatus: false,
+    };
+  },
+
+  mounted() {
+    const url = window.location.href;
+    const payload = url.split("?")[1];
+
+    if (payload) {
+      this.sendPayload(payload);
+    }
+  },
+
+  methods: {
+    async sendPayload(payload) {
+      const res = await fetch("/avnordic-login", {
+        method: "POST",
+        headers: {
+          Authorization: "Basic " + btoa(this.userName + ":" + this.userPass),
+        },
+        body: JSON.stringify({ payload: payload }),
+        redirect: "follow",
+      });
+
+      const jsonResponse = await res.json();
+
+      if (!res.ok || jsonResponse.error) {
+        throw new Error("Request failed");
+      } else {
+        this.loginStatus = true;
+      }
+    },
   },
 };
 </script>
