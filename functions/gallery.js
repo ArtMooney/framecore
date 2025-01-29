@@ -1,10 +1,10 @@
-import { checkLogin } from "../middleware/check-login.js";
-import { saveThumbs } from "../utility/save-thumbs.js";
-import { deleteOldThumbs } from "../utility/delete-old-thumbs.js";
-import { deleteFile } from "../utility/delete-file.js";
-import { isChangedFolders } from "../utility/is-changed-folders.js";
-import { uploadProcessFile } from "../utility/upload-process-file.js";
-import { listFolder } from "../utility/list-folder.js";
+import { checkLogin } from "./middleware/check-login.js";
+import { saveThumbs } from "./utility/save-thumbs.js";
+import { deleteOldThumbs } from "./utility/delete-old-thumbs.js";
+import { deleteFile } from "./utility/delete-file.js";
+import { isChangedFolders } from "./utility/is-changed-folders.js";
+import { uploadProcessFile } from "./utility/upload-process-file.js";
+import { listFolder } from "./utility/list-folder.js";
 
 export const onRequestGet = async (context) => {
   const corsHeaders = {

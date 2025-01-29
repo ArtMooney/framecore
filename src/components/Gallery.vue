@@ -110,7 +110,7 @@ export default {
 
   computed: {
     async getImageData() {
-      const url = "/api/gallery";
+      const url = "/gallery";
       const res = await fetch(url, {
         headers: {
           Authorization: "Basic " + btoa(this.userName + ":" + this.userPass),

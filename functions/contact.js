@@ -1,6 +1,6 @@
-import { checkLogin } from "../middleware/check-login.js";
-import { getWelcomeMessage } from "../content/get-welcome-message.js";
-import { sendEmail } from "../utility/send-email.js";
+import { checkLogin } from "./middleware/check-login.js";
+import { getWelcomeMessage } from "./content/get-welcome-message.js";
+import { sendEmail } from "./utility/send-email.js";
 
 export const onRequestPost = async (context) => {
   const corsHeaders = {
