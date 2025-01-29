@@ -7,13 +7,14 @@ import Button from "../elements/Button.vue";
     class="grid-rows-auto mx-auto grid w-full max-w-screen-2xl grid-cols-1 px-4 sm:px-4"
   >
     <div class="justify-self-center pb-4">Login to AV Nordic Sync</div>
-    
+
     <Button
       text="Login"
       :link="loginUrl"
       hash=""
       type="button"
       data-wait=""
+      :open-external="true"
       class="justify-self-center"
     />
   </div>

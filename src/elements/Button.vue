@@ -34,6 +34,10 @@ export default {
       type: String,
       required: true,
     },
+    openExternal: {
+      type: Boolean,
+      required: false,
+    },
   },
 
   methods: {
@@ -43,7 +47,11 @@ export default {
 
     handleClick() {
       if (this.isExternal(this.link)) {
-        window.open(this.link, "_blank", "noopener");
+        window.open(
+          this.link,
+          this.openExternal ? "_blank" : "_self",
+          "noopener",
+        );
       } else {
         this.$router.push({ path: this.link, hash: this.hash });
       }
