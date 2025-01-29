@@ -21,6 +21,11 @@ export default () =>
         component: () => import("./pages/Contact.vue"),
       },
       {
+        path: "/avnordic-login",
+        name: "AVNordicLogin",
+        component: () => import("./pages/AVNordicLogin.vue"),
+      },
+      {
         path: "/:pathMatch(.*)*",
         name: "NotFound",
         component: () => import("./pages/NotFound.vue"),
