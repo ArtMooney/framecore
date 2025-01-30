@@ -2,7 +2,7 @@
 
 ### run for local development:
 
-wrangler pages dev -- npm run dev
+npm run dev
 
 ### deployment:
 

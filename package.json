@@ -4,12 +4,15 @@
     "version": "0.0.0",
     "type": "module",
     "scripts": {
-        "dev": "vite",
-        "build": "vite build",
+        "dev": "concurrently --kill-others-on-fail \"npm run dev:vite\" \"npm run dev:wrangler\"",
+        "dev:vite": "vite --mode development",
+        "dev:wrangler": "wrangler pages dev --proxy 5173 --port 8788",
+        "build": "vite build --mode production",
         "preview": "vite preview"
     },
     "dependencies": {
         "@unhead/vue": "^1.9.13",
+        "concurrently": "^9.1.2",
         "plyr": "^3.7.8",
         "vue": "^3.3.11",
         "vue-router": "^4.3.0",
@@ -22,7 +25,7 @@
         "prettier": "^3.2.5",
         "prettier-plugin-tailwindcss": "^0.6.0",
         "tailwindcss": "^3.4.3",
-        "vite": "^5.1.6",
-        "wrangler": "^3.51.2"
+        "vite": "^5.4.14",
+        "wrangler": "^3.107.0"
     }
 }
