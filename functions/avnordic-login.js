@@ -22,9 +22,10 @@ export const onRequestPost = async ({ request, env, ctx }) => {
   }
 
   const code = body.payload.split("&state")[0].split("=")[1];
-  const state = body.payload.split("&state=")[1];
+  const state = body.payload.split("&state=")[1].split("&")[0];
+  const redirect_uri = body.payload.split("&redirect_uri=")[1];
 
-  if (!code || !state) {
+  if (!code || !state || !redirect_uri) {
     return new Response(JSON.stringify({ error: "Error" }), {
       headers: corsHeaders,
     });
@@ -34,7 +35,7 @@ export const onRequestPost = async ({ request, env, ctx }) => {
     env.AVNORDIC_BASEROW_BACKEND_TOKEN,
     env.AVNORDIC_TABLE_CODE,
     1,
-    { code, state },
+    { code, state, redirect_uri },
   );
 
   return new Response(JSON.stringify({ saveCode }), {

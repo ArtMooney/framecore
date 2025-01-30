@@ -70,10 +70,12 @@ export default {
 
   mounted() {
     const url = window.location.href;
-    const payload = url.split("?")[1];
+    let payload = url.split("?")[1];
 
     if (payload) {
-      this.sendPayload(payload);
+      this.sendPayload(
+        payload + "&redirect_uri=" + window.location.href.split("?")[0],
+      );
     }
   },
 
@@ -94,6 +96,11 @@ export default {
         throw new Error("Request failed");
       } else {
         this.loginStatus = true;
+
+        this.$router.replace({
+          path: this.$route.path,
+          query: {},
+        });
       }
     },
   },
