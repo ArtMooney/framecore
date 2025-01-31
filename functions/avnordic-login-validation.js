@@ -34,12 +34,6 @@ export const onRequestPost = async ({ request, env, ctx }) => {
     env.FORTNOX_AUTH,
   );
 
-  if (isValid) {
-    console.log("Token är giltig");
-  } else {
-    console.log("Token är ogiltig eller har gått ut");
-  }
-
   return new Response(JSON.stringify({ status: isValid }), {
     headers: corsHeaders,
   });

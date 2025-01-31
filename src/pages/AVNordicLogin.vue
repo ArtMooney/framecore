@@ -75,11 +75,11 @@ export default {
     let payload = url.split("?")[1];
 
     if (payload) {
-      // this.sendPayload(
-      //   payload + "&redirect_uri=" + window.location.href.split("?")[0],
-      // );
+      this.sendPayload(
+        payload + "&redirect_uri=" + window.location.href.split("?")[0],
+      );
     } else {
-      // this.validateLogin();
+      this.validateLogin();
     }
   },
 
@@ -95,17 +95,16 @@ export default {
       });
 
       const jsonResponse = await res.json();
-      console.log(jsonResponse);
 
       if (!res.ok || jsonResponse.error) {
         throw new Error("Request failed");
       } else {
         this.loginStatusMessage = true;
 
-        // this.$router.replace({
-        //   path: this.$route.path,
-        //   query: {},
-        // });
+        this.$router.replace({
+          path: this.$route.path,
+          query: {},
+        });
       }
     },
 
@@ -120,7 +119,6 @@ export default {
       });
 
       const jsonResponse = await res.json();
-      console.log(jsonResponse.status);
 
       if (!res.ok || jsonResponse.error) {
         throw new Error("Request failed");

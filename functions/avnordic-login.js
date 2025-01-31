@@ -35,12 +35,10 @@ export const onRequestPost = async ({ request, env, ctx }) => {
     );
   }
 
-  // console.log(code, state, redirect_uri);
-
   const accessToken = await getTokenFortnox(
     env.FORTNOX_AUTH,
     code,
-    "https://www.framecore.se/avnordic-login",
+    redirect_uri,
   );
 
   if (!accessToken) {

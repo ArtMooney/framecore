@@ -26,7 +26,7 @@ export async function getTokenFortnox(auth, code, redirectUri) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
 
-      return await response.text();
+      return await response.json();
     } catch (error) {
       if (attempt === maxRetries) {
         throw error;
