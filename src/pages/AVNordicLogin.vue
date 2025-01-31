@@ -91,16 +91,17 @@ export default {
       });
 
       const jsonResponse = await res.json();
+      console.log("jsonResponse", jsonResponse);
 
       if (!res.ok || jsonResponse.error) {
         throw new Error("Request failed");
       } else {
         this.loginStatus = true;
 
-        this.$router.replace({
-          path: this.$route.path,
-          query: {},
-        });
+        // this.$router.replace({
+        //   path: this.$route.path,
+        //   query: {},
+        // });
       }
     },
   },
