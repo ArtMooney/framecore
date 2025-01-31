@@ -1,7 +1,7 @@
 import { corsHeaders, handleCors } from "./middleware/cors.js";
 import { checkLogin } from "./middleware/check-login.js";
 import { updateRow } from "./baserow/update-row.js";
-import { getTokenFortnox } from "./fortnox/getTokenFortnox.js";
+import { getTokenFortnox } from "./fortnox/get-token-fortnox.js";
 
 export const onRequestPost = async ({ request, env, ctx }) => {
   const corsResponse = await handleCors(request, env);
@@ -26,19 +26,6 @@ export const onRequestPost = async ({ request, env, ctx }) => {
   const state = body.payload.split("&state=")[1].split("&")[0];
   const redirect_uri = body.payload.split("&redirect_uri=")[1];
 
-  // if (!code || !state || !redirect_uri) {
-  //   return new Response(JSON.stringify({ error: "Error" }), {
-  //     headers: corsHeaders,
-  //   });
-  // }
-  //
-  // const saveCode = await updateRow(
-  //   env.AVNORDIC_BASEROW_BACKEND_TOKEN,
-  //   env.AVNORDIC_TABLE_CODE,
-  //   1,
-  //   { code, state, redirect_uri },
-  // );
-
   if (!code || state !== "somestate123" || !redirect_uri) {
     return new Response(
       JSON.stringify({
@@ -51,7 +38,7 @@ export const onRequestPost = async ({ request, env, ctx }) => {
   const accessToken = await getTokenFortnox(
     env.FORTNOX_AUTH,
     code,
-    "https://www.framecore.se/avnordic-login",
+    redirect_uri,
   );
 
   if (!accessToken) {
