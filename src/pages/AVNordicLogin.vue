@@ -119,12 +119,12 @@ export default {
       });
 
       const jsonResponse = await res.json();
-      console.log(jsonResponse);
+      console.log(jsonResponse.status);
 
       if (!res.ok || jsonResponse.error) {
         throw new Error("Request failed");
       } else if (jsonResponse.status === true) {
-        // this.isLoggedIn = true;
+        this.isLoggedIn = true;
       }
     },
   },
