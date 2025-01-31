@@ -101,10 +101,10 @@ export default {
       } else {
         this.loginStatusMessage = true;
 
-        this.$router.replace({
-          path: this.$route.path,
-          query: {},
-        });
+        // this.$router.replace({
+        //   path: this.$route.path,
+        //   query: {},
+        // });
       }
     },
 

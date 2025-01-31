@@ -8,7 +8,7 @@ export async function validateFortnoxToken(accessToken) {
       },
     });
 
-    return true;
+    return response.ok;
   } catch (error) {
     return false;
   }

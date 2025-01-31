@@ -29,7 +29,16 @@ export const onRequestPost = async ({ request, env, ctx }) => {
     );
   }
 
-  const isValid = await validateFortnoxToken(accessToken.access_token);
+  const isValid = await validateFortnoxToken(
+    accessToken.access_token,
+    env.FORTNOX_AUTH,
+  );
+
+  if (isValid) {
+    console.log("Token är giltig");
+  } else {
+    console.log("Token är ogiltig eller har gått ut");
+  }
 
   return new Response(JSON.stringify({ status: isValid }), {
     headers: corsHeaders,
