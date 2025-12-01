@@ -18,8 +18,7 @@ export const onRequestPost = async (context) => {
       headers: corsHeaders,
     });
 
-  // const body = await context.request.json(); // when using only a json body
-  const formData = await context.request.formData(); // when using formdata instead of json body
+  const formData = await context.request.formData();
   const formDataJson = {};
   formData.forEach((value, key) => {
     formDataJson[key] = value;
@@ -29,7 +28,14 @@ export const onRequestPost = async (context) => {
     return new Response(JSON.stringify("Error"), { headers: corsHeaders });
   }
 
-  // to FrameCore
+  if (
+    formDataJson.pagename ===
+    "Webb- och 3D-Animationstjänster | Kreativa Lösningar | FrameCore 2024"
+  ) {
+    return new Response(JSON.stringify("ok"), { headers: corsHeaders });
+  }
+
+  // to Contact
   await sendEmail(
     env.EMAIL_FROM,
     env.EMAIL_TO,
