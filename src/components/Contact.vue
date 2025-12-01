@@ -164,7 +164,7 @@ export default {
       },
       userName: `${import.meta.env.VITE_USERNAME}`,
       userPass: `${import.meta.env.VITE_USERPASS}`,
-      formWebhook: "/contact",
+      formWebhook: "/contact-form",
       defaultEmailMessage: "Oj! Något gick fel när formuläret skulle skickas.",
       emailErrorMessage:
         "En eller flera emailadresser som ni har angett tycks inte ha ett korrekt format.",
