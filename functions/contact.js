@@ -29,7 +29,7 @@ export const onRequestPost = async (context) => {
   }
 
   if (
-    formDataJson.pagename ===
+    formDataJson.pagename !==
     "Webb- och 3D-Animationstjänster | Kreativa Lösningar | FrameCore 2024"
   ) {
     return new Response(JSON.stringify("ok"), { headers: corsHeaders });
