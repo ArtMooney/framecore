@@ -1,0 +1,16 @@
+name = "framecore"
+compatibility_date = "2026-03-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "framecore"
+database_id = "65ee90e3-1801-41b7-8927-a2d704a6ebd4"
+#preview_database_id = "preview-database-id"
+migrations_dir = "migrations"
+#remote = true
+
+[[r2_buckets]]
+binding = "FILES"
+bucket_name = "framecore"
+#preview_bucket_name = "framecore-dev"
+remote = true
