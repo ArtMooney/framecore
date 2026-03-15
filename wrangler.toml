@@ -4,7 +4,7 @@ compatibility_date = "2026-03-01"
 [[d1_databases]]
 binding = "DB"
 database_name = "framecore"
-database_id = "65ee90e3-1801-41b7-8927-a2d704a6ebd4"
+database_id = "15a75150-a383-446c-8de4-27ff1ef84e7d"
 #preview_database_id = "preview-database-id"
 migrations_dir = "migrations"
 #remote = true

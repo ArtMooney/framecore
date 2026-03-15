@@ -99,12 +99,6 @@ import IconIconoirXmark from "~icons/iconoir/xmark";
             :class="[currentPath === '/kontakta-oss' && 'opacity-60']"
           />
         </div>
-
-        <SocialMediaIcons
-          v-if="showNavbar"
-          class="mt-4"
-          :class="[showNavbar && 'xl:hidden!']"
-        />
       </div>
     </div>
   </div>
