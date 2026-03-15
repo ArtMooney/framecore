@@ -48,64 +48,64 @@ import IconIconoirXmark from "~icons/iconoir/xmark";
           :class="[showNavbar && 'xl:hidden!']"
         />
 
-        <NavbarLink
-          @click="showNavbar = false"
-          icon="heroicons:home"
-          :text="staticContent.buttons.index"
-          route="/"
-        ></NavbarLink>
+        <!--        <NavbarLink-->
+        <!--          @click="showNavbar = false"-->
+        <!--          icon="heroicons:home"-->
+        <!--          :text="staticContent.buttons.index"-->
+        <!--          route="/"-->
+        <!--        ></NavbarLink>-->
 
-        <NavbarLink
-          @click="showNavbar = false"
-          icon="ph:film-slate-light"
-          :text="staticContent.buttons.mediaProduktion"
-          route="/media-produktion"
-        ></NavbarLink>
+        <!--        <NavbarLink-->
+        <!--          @click="showNavbar = false"-->
+        <!--          icon="ph:film-slate-light"-->
+        <!--          :text="staticContent.buttons.mediaProduktion"-->
+        <!--          route="/media-produktion"-->
+        <!--        ></NavbarLink>-->
 
-        <NavbarLink
-          @click="showNavbar = false"
-          icon="fluent:people-32-regular"
-          :text="staticContent.buttons.kollegor"
-          route="/dagens-adinq"
-        ></NavbarLink>
+        <!--        <NavbarLink-->
+        <!--          @click="showNavbar = false"-->
+        <!--          icon="fluent:people-32-regular"-->
+        <!--          :text="staticContent.buttons.kollegor"-->
+        <!--          route="/dagens-adinq"-->
+        <!--        ></NavbarLink>-->
 
-        <NavbarLink
-          @click="showNavbar = false"
-          icon="famicons:chatbubble-ellipses-outline"
-          :text="staticContent.buttons.kundutlatanden"
-          route="/kundutlatanden"
-        ></NavbarLink>
+        <!--        <NavbarLink-->
+        <!--          @click="showNavbar = false"-->
+        <!--          icon="famicons:chatbubble-ellipses-outline"-->
+        <!--          :text="staticContent.buttons.kundutlatanden"-->
+        <!--          route="/kundutlatanden"-->
+        <!--        ></NavbarLink>-->
 
-        <NavbarLink
-          @click="showNavbar = false"
-          icon="proicons:chat-question"
-          :text="staticContent.buttons.varforOss"
-          route="/varfor-oss"
-        ></NavbarLink>
+        <!--        <NavbarLink-->
+        <!--          @click="showNavbar = false"-->
+        <!--          icon="proicons:chat-question"-->
+        <!--          :text="staticContent.buttons.varforOss"-->
+        <!--          route="/varfor-oss"-->
+        <!--        ></NavbarLink>-->
 
-        <NavbarLink
-          @click="showNavbar = false"
-          icon="hugeicons:money-bag-01"
-          :text="staticContent.buttons.priser"
-          route="/priser"
-        ></NavbarLink>
+        <!--        <NavbarLink-->
+        <!--          @click="showNavbar = false"-->
+        <!--          icon="hugeicons:money-bag-01"-->
+        <!--          :text="staticContent.buttons.priser"-->
+        <!--          route="/priser"-->
+        <!--        ></NavbarLink>-->
 
-        <div class="group relative">
-          <button @click="handleClickContact" class="white">
-            {{ staticContent.buttons.kontaktaOss }}
-          </button>
-          <div
-            class="absolute inset-0 z-[-1] w-full rounded-full bg-linear-to-r from-red-400 to-red-800 opacity-0 blur-xl transition-all duration-300 ease-in-out group-hover:opacity-90"
-            :class="[currentPath === '/kontakta-oss' && 'opacity-60']"
-          />
-        </div>
+        <!--        <div class="group relative">-->
+        <!--          <button @click="handleClickContact" class="white">-->
+        <!--            {{ staticContent.buttons.kontaktaOss }}-->
+        <!--          </button>-->
+        <!--          <div-->
+        <!--            class="absolute inset-0 z-[-1] w-full rounded-full bg-linear-to-r from-red-400 to-red-800 opacity-0 blur-xl transition-all duration-300 ease-in-out group-hover:opacity-90"-->
+        <!--            :class="[currentPath === '/kontakta-oss' && 'opacity-60']"-->
+        <!--          />-->
+        <!--        </div>-->
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { useStaticContentStore } from "~/stores/static-content.js";
+// import { useStaticContentStore } from "~/stores/static-content.js";
 
 export default {
   name: "Navbar",
@@ -125,10 +125,10 @@ export default {
       return this.$route.path;
     },
 
-    staticContent() {
-      return useStaticContentStore().getContentByTitle("component - Navbar")
-        .content;
-    },
+    // staticContent() {
+    //   return useStaticContentStore().getContentByTitle("component - Navbar")
+    //     .content;
+    // },
   },
 
   mounted() {
