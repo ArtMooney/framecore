@@ -6,8 +6,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        heading: ["Hanuman", "sans-serif"],
-        body: ["Poppins", "sans-serif"],
+        heading: ["Exo", "sans-serif"],
+        body: ["Noto Sans Display", "sans-serif"],
       },
     },
   },
