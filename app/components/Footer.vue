@@ -12,9 +12,9 @@ import IconEmojioneV1GrowingHeart from "~icons/emojione-v1/growing-heart";
     >
       <NuxtLink to="/">
         <NuxtImg
-          src="adinq_vit.svg"
+          src="framecore-logo.png"
           alt="footer logo"
-          class="relative mb-12 h-auto w-32 min-w-32 opacity-90 transition-opacity duration-300 ease-in-out hover:opacity-100 md:w-26 md:min-w-26"
+          class="relative mb-12 h-auto w-32 min-w-32 opacity-90 transition-opacity duration-300 ease-in-out hover:opacity-100 md:w-52 md:min-w-52"
         />
       </NuxtLink>
 
@@ -45,34 +45,6 @@ import IconEmojioneV1GrowingHeart from "~icons/emojione-v1/growing-heart";
         <!--        ></NavbarLink>-->
         <!--        <NavbarLink text="Admin" route="/admin"></NavbarLink>-->
       </div>
-
-      <!--      <SocialMediaIcons-->
-      <!--        class="row-start-3 my-12 md:col-start-3 md:col-end-4 md:row-start-auto md:mt-3 md:justify-self-end"-->
-      <!--      />-->
-
-      <div
-        class="mt-8 mb-12 flex w-full flex-col items-center justify-center gap-8 md:col-span-3 md:flex-row"
-      >
-        <NuxtImg
-          src="creditsafe-adinq.png"
-          class="h-auto w-32 max-w-32 min-w-32"
-          sizes="350px"
-          width="709"
-          height="308"
-          format="webp"
-        ></NuxtImg>
-
-        <NuxtImg
-          src="gasell-logo-inv-2024.png"
-          class="-mt-4 mb-2 h-auto w-40 max-w-40 min-w-40 md:mt-0"
-          sizes="350px"
-          width="500"
-          height="230"
-          format="webp"
-        ></NuxtImg>
-      </div>
-
-      <!--      <CompanyInfo />-->
 
       <div
         class="col-span-1 my-4 h-px w-2/3 justify-self-center bg-gray-200/30 md:col-span-3 xl:w-1/3"

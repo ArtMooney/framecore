@@ -20,9 +20,9 @@ import IconIconoirXmark from "~icons/iconoir/xmark";
     >
       <router-link to="/">
         <NuxtImg
-          src="adinq_vit.svg"
+          src="framecore-logo.svg"
           alt="company logo"
-          class="h-auto w-24 p-1 xl:w-32 xl:p-2"
+          class="h-auto w-24 p-1 xl:w-52 xl:p-2"
           :class="currentPath === '/dagens-adinq' && 'opacity-0'"
         />
       </router-link>
