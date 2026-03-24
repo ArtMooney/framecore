@@ -46,9 +46,9 @@ import IconEmojioneV1GrowingHeart from "~icons/emojione-v1/growing-heart";
         <!--        <NavbarLink text="Admin" route="/admin"></NavbarLink>-->
       </div>
 
-      <SocialMediaIcons
-        class="row-start-3 my-12 md:col-start-3 md:col-end-4 md:row-start-auto md:mt-3 md:justify-self-end"
-      />
+      <!--      <SocialMediaIcons-->
+      <!--        class="row-start-3 my-12 md:col-start-3 md:col-end-4 md:row-start-auto md:mt-3 md:justify-self-end"-->
+      <!--      />-->
 
       <div
         class="mt-8 mb-12 flex w-full flex-col items-center justify-center gap-8 md:col-span-3 md:flex-row"
@@ -72,7 +72,7 @@ import IconEmojioneV1GrowingHeart from "~icons/emojione-v1/growing-heart";
         ></NuxtImg>
       </div>
 
-      <CompanyInfo />
+      <!--      <CompanyInfo />-->
 
       <div
         class="col-span-1 my-4 h-px w-2/3 justify-self-center bg-gray-200/30 md:col-span-3 xl:w-1/3"
