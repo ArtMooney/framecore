@@ -39,6 +39,8 @@
         "pinia": "^3.0.4",
         "pinia-plugin-persistedstate": "^4.7.1",
         "tailwindcss": "^4.2.1",
+        "three": "0.124.0",
+        "vanta": "^0.5.24",
         "vue": "latest",
         "vue-chartjs": "^5.3.3",
         "vue-draggable-next": "^2.3.0",
