@@ -1,5 +1,8 @@
 import tailwindcss from "@tailwindcss/vite";
 
+const imageBaseUrl = "https://pub-0eb6cf2c07684686b6436a5e5abf1077.r2.dev";
+const siteUrl = "https://www.framecore.se";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2026-03-01",
@@ -31,8 +34,8 @@ export default defineNuxtConfig({
     public: {
       userName: process.env.NUXT_PUBLIC_USERNAME,
       userPass: process.env.NUXT_PUBLIC_USERPASS,
-      imageBaseUrl: process.env.NUXT_PUBLIC_IMAGE_BASE_URL,
-      publicSiteUrl: process.env.NUXT_PUBLIC_SITE_URL,
+      imageBaseUrl,
+      publicSiteUrl: siteUrl,
     },
   },
 
@@ -49,7 +52,7 @@ export default defineNuxtConfig({
     provider: "weserv",
 
     weserv: {
-      baseURL: process.env.NUXT_PUBLIC_IMAGE_BASE_URL,
+      baseURL: imageBaseUrl,
       modifiers: {
         format: "webp",
         quality: 65,
