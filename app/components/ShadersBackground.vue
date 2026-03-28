@@ -1,11 +1,22 @@
 <script setup>
-import { Shader, LinearGradient, CursorTrail } from "shaders/vue";
+import { Shader, Glow, ChromaFlow } from "shaders/vue";
 </script>
 
 <template>
   <Shader class="absolute inset-0 z-0">
-    <LinearGradient colorA="#0f172a" colorB="#7c3aed" />
-    <CursorTrail />
+    <Glow :intensity="10" :size="0.1" :threshold="1" />
+    <ChromaFlow
+      baseColor="#0f172a"
+      upColor="#a78bfa"
+      downColor="#6366f1"
+      leftColor="#22d3ee"
+      rightColor="#8b5cf6"
+      :intensity="1"
+      :radius="1"
+      :momentum="40"
+      blendMode="screen"
+      :opacity="1"
+    />
   </Shader>
 </template>
 
