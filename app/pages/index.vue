@@ -19,6 +19,8 @@ definePageMeta({
   <div
     class="hero-bg relative flex min-h-screen flex-col items-center justify-center px-4 text-center"
   >
+    <ShadersBackground />
+
     <!--    <NuxtImg-->
     <!--      src="framecore-logo.png"-->
     <!--      alt="company logo"-->
