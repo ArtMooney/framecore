@@ -17,7 +17,7 @@ definePageMeta({
 
 <template>
   <div
-    class="hero-bg relative flex min-h-screen flex-col items-center justify-center px-4 text-center"
+    class="relative flex flex-col items-center justify-center px-4 text-center"
   >
     <ShadersBackground />
 
