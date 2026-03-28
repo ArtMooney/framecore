@@ -10,14 +10,6 @@ import IconEmojioneV1GrowingHeart from "~icons/emojione-v1/growing-heart";
     <div
       class="mx-auto grid w-full max-w-screen-2xl items-start justify-items-center px-12 pt-20 pb-12 md:grid-cols-[0.5fr_1fr_0.5fr] md:justify-items-start"
     >
-      <NuxtLink to="/">
-        <NuxtImg
-          src="framecore-logo.png"
-          alt="footer logo"
-          class="relative mb-12 h-auto w-32 min-w-32 opacity-90 transition-opacity duration-300 ease-in-out hover:opacity-100 md:w-52 md:min-w-52"
-        />
-      </NuxtLink>
-
       <div
         class="mt-4 flex flex-col flex-wrap items-center justify-center gap-x-4 gap-y-2 justify-self-center sm:mx-12 md:mx-0 lg:flex-row"
       >
