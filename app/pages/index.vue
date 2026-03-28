@@ -21,29 +21,15 @@ definePageMeta({
   >
     <ShadersBackground />
 
-    <!--    <NuxtImg-->
-    <!--      src="framecore-logo.png"-->
-    <!--      alt="company logo"-->
-    <!--      :class="[-->
-    <!--        'relative z-10 h-auto w-2/3',-->
-    <!--        'drop-shadow-[0_0_80px_rgba(168,85,247,0.8)]',-->
-    <!--      ]"-->
-    <!--      sizes="2000px"-->
-    <!--      width="2000"-->
-    <!--      height="209"-->
-    <!--      format="webp"-->
-    <!--    ></NuxtImg>-->
+    <h1
+      class="bg-linear-to-r from-teal-400 to-olive-400 bg-clip-text text-transparent"
+    >
+      Fullstack Developer
+    </h1>
 
-    <!--    <div class="relative z-10 max-w-3xl py-12 text-2xl">Heading subtitle</div>-->
-
-    <!--    <NuxtLink-->
-    <!--      :to="{ path: '/', hash: '#' }"-->
-    <!--      class="absolute bottom-8 z-10 flex w-full items-center justify-center"-->
-    <!--    >-->
-    <!--      <IconChevronDoubleDown16-->
-    <!--        class="size-12 cursor-pointer opacity-70 hover:opacity-100"-->
-    <!--      ></IconChevronDoubleDown16>-->
-    <!--    </NuxtLink>-->
+    <p class="text-neutral-300">
+      Building websites and web applications with modern web tech
+    </p>
   </div>
 </template>
 
