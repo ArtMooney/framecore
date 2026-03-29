@@ -32,6 +32,7 @@ export const static_content = sqliteTable("static_content", {
 export const projects = sqliteTable("projects", {
   id: integer("id").primaryKey({ autoIncrement: true }),
   title: text("title").notNull(),
+  description: text("description"),
   image: text("image"),
   url: text("url"),
   sortOrder: integer("sort_order"),

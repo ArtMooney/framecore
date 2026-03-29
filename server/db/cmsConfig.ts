@@ -30,6 +30,12 @@ export const fieldsConfig = {
   projects: {
     id: { type: "integer", label: "", required: true, hidden: true },
     title: { type: "text", label: "Title", required: true, hidden: false },
+    description: {
+      type: "textarea",
+      label: "Description",
+      required: false,
+      hidden: false,
+    },
     image: { type: "fileImg", label: "Image", required: false, hidden: false },
     url: { type: "text", label: "Url", required: false, hidden: false },
     sortOrder: { type: "integer", label: "", required: true, hidden: true },
