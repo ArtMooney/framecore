@@ -85,7 +85,7 @@ definePageMeta({
 
       <p
         v-html="formatText(staticContent.contact.text)"
-        class="mt-32 text-sm text-neutral-400"
+        class="mt-32 text-sm text-neutral-400 [&_a]:text-mist-500 [&_a]:underline [&_a]:hover:text-mist-400"
       ></p>
     </div>
   </div>
