@@ -70,7 +70,7 @@ export const staticContentTypes = {
   "page - Projects": {
     header: {
       title: "text",
-      subtitle: "text",
+      subtitle: "textarea",
     },
     back: {
       text: "text",
