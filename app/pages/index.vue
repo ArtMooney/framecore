@@ -1,9 +1,8 @@
 <script setup>
 import IconVue from "~icons/logos/vue";
 import IconNuxt from "~icons/logos/nuxt-icon";
-import IconNitro from "~icons/unjs/nitro";
 import IconTailwind from "~icons/devicon/tailwindcss";
-import IconNode from "~icons/logos/nodejs-icon-alt";
+import IconNode from "~icons/material-icon-theme/nodejs-alt";
 import IconJS from "~icons/vscode-icons/file-type-js-official";
 
 const staticContentStore = useStaticContentStore();
@@ -40,47 +39,37 @@ definePageMeta({
       <div
         class="mx-auto mt-8 flex w-fit items-center justify-center gap-3 border border-white/10 p-4"
       >
-        <ClientOnly>
-          <NuxtLink to="https://vuejs.org/" target="_blank" class="items flex">
-            <IconVue class="size-8" />
-          </NuxtLink>
+        <NuxtLink to="https://vuejs.org/" target="_blank" class="items flex">
+          <IconVue class="size-8" />
+        </NuxtLink>
 
-          <NuxtLink to="https://nuxt.com/" target="_blank" class="items flex">
-            <IconNuxt class="size-8" />
-          </NuxtLink>
+        <NuxtLink to="https://nuxt.com/" target="_blank" class="items flex">
+          <IconNuxt class="size-8" />
+        </NuxtLink>
 
-          <NuxtLink
-            to="https://nitro.build/"
-            target="_blank"
-            class="items flex"
-          >
-            <IconNitro class="size-8" />
-          </NuxtLink>
+        <NuxtLink to="https://nitro.build/" target="_blank" class="items flex">
+          <NitroIcon class="size-8" />
+        </NuxtLink>
 
-          <NuxtLink
-            to="https://tailwindcss.com/"
-            target="_blank"
-            class="items flex"
-          >
-            <IconTailwind class="size-8" />
-          </NuxtLink>
+        <NuxtLink
+          to="https://tailwindcss.com/"
+          target="_blank"
+          class="items flex"
+        >
+          <IconTailwind class="size-8" />
+        </NuxtLink>
 
-          <NuxtLink
-            to="https://nodejs.org/en"
-            target="_blank"
-            class="items flex"
-          >
-            <IconNode class="size-8" />
-          </NuxtLink>
+        <NuxtLink to="https://nodejs.org/en" target="_blank" class="items flex">
+          <IconNode class="size-8" />
+        </NuxtLink>
 
-          <NuxtLink
-            to="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-            target="_blank"
-            class="items flex"
-          >
-            <IconJS class="size-8" />
-          </NuxtLink>
-        </ClientOnly>
+        <NuxtLink
+          to="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+          target="_blank"
+          class="items flex"
+        >
+          <IconJS class="size-8" />
+        </NuxtLink>
       </div>
 
       <p
