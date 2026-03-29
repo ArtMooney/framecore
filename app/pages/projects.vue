@@ -16,8 +16,6 @@ const { data: projects, error } = await useFetch("/api/projects", {
   default: () => [],
 });
 
-console.log("Projects data:", projects.value);
-
 definePageMeta({
   ssr: true,
 });
