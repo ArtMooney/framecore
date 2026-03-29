@@ -42,12 +42,14 @@ definePageMeta({
         {{ staticContent.header.subtitle }}
       </p>
 
-      <div class="mt-8 flex gap-4 border border-white/10 text-neutral-300">
+      <div
+        class="mt-8 flex flex-col gap-x-4 divide-y divide-white/10 border border-white/10 text-neutral-300"
+      >
         <NuxtLink
           v-for="project of projects"
           :to="`${project.url}`"
           target="_blank"
-          class="flex w-full flex-row items-center gap-4"
+          class="trans flex w-full flex-row items-center gap-4 transition duration-300 ease-in-out hover:bg-white/5"
           :key="project.id"
         >
           <NuxtImg
@@ -55,7 +57,10 @@ definePageMeta({
             class="size-20"
           ></NuxtImg>
 
-          <p>{{ project.title }}</p>
+          <div class="flex flex-col items-start gap-1 text-left">
+            <p>{{ project.title }}</p>
+            <p class="text-xs text-neutral-400">{{ project.description }}</p>
+          </div>
         </NuxtLink>
       </div>
 

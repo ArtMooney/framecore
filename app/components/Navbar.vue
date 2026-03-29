@@ -15,7 +15,11 @@ import IconGrid from "~icons/glyphs/grid-sm-bold";
         />
       </router-link>
 
-      <IconGrid class="size-7 cursor-pointer text-neutral-400" />
+      <NuxtLink to="/projects" class="items flex">
+        <IconGrid
+          class="size-7 cursor-pointer text-neutral-400 transition duration-300 ease-in-out hover:text-neutral-300"
+        />
+      </NuxtLink>
     </div>
   </div>
 </template>
