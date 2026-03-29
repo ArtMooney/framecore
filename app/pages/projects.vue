@@ -31,7 +31,7 @@ definePageMeta({
       <ShadersBackground />
     </ClientOnly>
 
-    <div class="relative">
+    <div class="relative max-w-2xl">
       <h1
         class="bg-linear-to-r from-teal-400 to-olive-400 bg-clip-text text-transparent"
       >
@@ -49,7 +49,7 @@ definePageMeta({
           v-for="project of projects"
           :to="`${project.url}`"
           target="_blank"
-          class="trans flex w-full flex-row items-center gap-4 transition duration-300 ease-in-out hover:bg-white/5"
+          class="trans flex w-full flex-row items-center transition duration-300 ease-in-out hover:bg-white/5"
           :key="project.id"
         >
           <NuxtImg
@@ -57,7 +57,7 @@ definePageMeta({
             class="size-20"
           ></NuxtImg>
 
-          <div class="flex flex-col items-start gap-1 text-left">
+          <div class="flex flex-col items-start gap-1 p-4 text-left">
             <p>{{ project.title }}</p>
             <p class="text-xs text-neutral-400">{{ project.description }}</p>
           </div>
