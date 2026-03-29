@@ -1,4 +1,5 @@
 <script setup>
+const config = useRuntimeConfig();
 const staticContentStore = useStaticContentStore();
 const staticContent = computed(
   () => staticContentStore.getContentByTitle("page - Projects").content,
@@ -14,6 +15,8 @@ const { data: projects, error } = await useFetch("/api/projects", {
   },
   default: () => [],
 });
+
+console.log("Projects data:", projects.value);
 
 definePageMeta({
   ssr: true,
@@ -39,13 +42,24 @@ definePageMeta({
         {{ staticContent.header.subtitle }}
       </p>
 
-      <div class="mt-8 flex items-center justify-center gap-4">
-        <NuxtLink to="/" class="text-teal-400 hover:underline">
-          <NuxtImg src=""></NuxtImg>
+      <div class="mt-8 flex gap-4 border border-white/10 text-neutral-300">
+        <NuxtLink
+          v-for="project of projects"
+          :to="`${project.url}`"
+          target="_blank"
+          class="flex w-full flex-row items-center gap-4"
+          :key="project.id"
+        >
+          <NuxtImg
+            :src="`/cms-files/${project.image}` ?? ''"
+            class="size-20"
+          ></NuxtImg>
+
+          <p>{{ project.title }}</p>
         </NuxtLink>
       </div>
 
-      <div class="mt-8 flex items-center justify-center gap-4">
+      <div class="mt-32 flex items-center justify-center gap-4">
         <NuxtLink to="/" class="text-teal-400 hover:underline">
           {{ staticContent.back.text }}
         </NuxtLink>
