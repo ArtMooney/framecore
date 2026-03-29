@@ -11,7 +11,7 @@ const staticContent = computed(
   () => staticContentStore.getContentByTitle("page - Index").content,
 );
 
-// useCmsSeo("SEO page - Index");
+useCmsSeo("SEO page - Index");
 
 definePageMeta({
   ssr: true,
