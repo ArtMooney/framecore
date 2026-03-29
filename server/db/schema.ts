@@ -28,3 +28,18 @@ export const static_content = sqliteTable("static_content", {
     .$onUpdate(() => sql`CURRENT_TIMESTAMP`)
     .notNull(),
 });
+
+export const projects = sqliteTable("projects", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
+  title: text("title").notNull(),
+  image: text("image"),
+  url: text("url"),
+  sortOrder: integer("sort_order"),
+  createdAt: text("created_at")
+    .default(sql`CURRENT_TIMESTAMP`)
+    .notNull(),
+  updatedAt: text("updated_at")
+    .default(sql`CURRENT_TIMESTAMP`)
+    .$onUpdate(() => sql`CURRENT_TIMESTAMP`)
+    .notNull(),
+});
