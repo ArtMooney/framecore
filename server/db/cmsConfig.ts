@@ -42,11 +42,8 @@ export const staticContentTypes = {
       title: "text",
       subtitle: "text",
     },
-    videoBlock: {
-      title: "text",
-      videoLinkSwe: "text",
-      videoLinkEng: "text",
-      poster: "fileImg",
+    contact: {
+      text: "textarea",
     },
   },
   "SEO page - Index": getSeoSchema(),

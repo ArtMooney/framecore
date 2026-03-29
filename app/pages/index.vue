@@ -6,13 +6,11 @@ import IconTailwind from "~icons/devicon/tailwindcss";
 import IconNode from "~icons/logos/nodejs-icon-alt";
 import IconJS from "~icons/vscode-icons/file-type-js-official";
 
-// const config = useRuntimeConfig();
-// const imageBaseUrl = config.public.imageBaseUrl;
-// const staticContentStore = useStaticContentStore();
-// const staticContent = computed(
-//   () => staticContentStore.getContentByTitle("page - Index").content,
-// );
-//
+const staticContentStore = useStaticContentStore();
+const staticContent = computed(
+  () => staticContentStore.getContentByTitle("page - Index").content,
+);
+
 // useCmsSeo("SEO page - Index");
 
 definePageMeta({
@@ -22,7 +20,7 @@ definePageMeta({
 
 <template>
   <div
-    class="relative flex grow flex-col items-center justify-center px-4 text-center"
+    class="relative flex grow flex-col items-center justify-center px-4 py-12 text-center"
   >
     <ClientOnly>
       <ShadersBackground />
@@ -32,11 +30,11 @@ definePageMeta({
       <h1
         class="bg-linear-to-r from-teal-400 to-olive-400 bg-clip-text text-transparent"
       >
-        Fullstack Developer
+        {{ staticContent.header.title }}
       </h1>
 
       <p class="text-neutral-300">
-        Building websites and web applications with modern web tech
+        {{ staticContent.header.subtitle }}
       </p>
 
       <div
@@ -84,6 +82,11 @@ definePageMeta({
           </NuxtLink>
         </ClientOnly>
       </div>
+
+      <p
+        v-html="formatText(staticContent.contact.text)"
+        class="mt-32 text-sm text-neutral-400"
+      ></p>
     </div>
   </div>
 </template>
