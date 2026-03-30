@@ -1,0 +1,20 @@
+name = "framecore"
+compatibility_date = "2026-03-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "framecore"
+database_id = "15a75150-a383-446c-8de4-27ff1ef84e7d"
+#preview_database_id = "preview-database-id"
+migrations_dir = "migrations"
+#remote = true
+
+[[r2_buckets]]
+binding = "FILES"
+bucket_name = "framecore"
+#preview_bucket_name = "framecore-dev"
+remote = true
+
+[triggers]
+# Runs on the 1st and 27th of each month at 03:00 UTC (≈ every 26 days)
+crons = ["0 3 1,27 * *"]
