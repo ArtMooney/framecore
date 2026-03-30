@@ -52,7 +52,7 @@ definePageMeta({
         >
           <NuxtImg
             :src="`/cms-files/${project.image}` ?? ''"
-            class="size-20"
+            class="h-auto w-24"
           ></NuxtImg>
 
           <div class="flex flex-col items-start gap-1 p-4 text-left">
