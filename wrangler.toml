@@ -16,5 +16,5 @@ bucket_name = "framecore"
 remote = true
 
 [triggers]
-# Runs on the 1st and 27th of each month at 03:00 UTC (≈ every 26 days)
-#crons = ["0 3 1,27 * *"]
+# Disabled – keep-files-alive trigger removed
+crons = []
