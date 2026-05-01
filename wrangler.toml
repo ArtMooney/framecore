@@ -17,4 +17,4 @@ remote = true
 
 [triggers]
 # Disabled – keep-files-alive trigger removed
-crons = []
+crons = ["0 3 1,27 * *"]

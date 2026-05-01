@@ -22,7 +22,7 @@ export default defineNuxtConfig({
     },
     scheduledTasks: {
       // Runs on the 1st and 27th of each month at 03:00 UTC (≈ every 26 days)
-      // "0 3 1,27 * *": ["keep-files-alive"],
+      "0 3 1,27 * *": ["keep-files-alive"],
     },
     prerender: {
       crawlLinks: false,
