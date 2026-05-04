@@ -73,6 +73,6 @@ definePageMeta({
 
 <script>
 export default {
-  name: "Index",
+  name: "Projects",
 };
 </script>
