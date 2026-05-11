@@ -16,5 +16,4 @@ bucket_name = "framecore"
 remote = true
 
 [triggers]
-# Disabled – keep-files-alive trigger removed
 crons = ["0 3 1,27 * *"]
