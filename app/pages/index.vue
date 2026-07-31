@@ -27,10 +27,9 @@ definePageMeta({
 
     <div class="relative">
       <h1
-        class="bg-linear-to-r from-teal-400 to-olive-400 bg-clip-text text-transparent"
-      >
-        {{ staticContent.header.title }}
-      </h1>
+        class="bg-linear-to-r from-teal-400 to-olive-400 bg-clip-text pb-4 text-transparent"
+        v-html="formatText(staticContent.header.title)"
+      ></h1>
 
       <p class="text-neutral-300">
         {{ staticContent.header.subtitle }}

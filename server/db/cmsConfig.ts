@@ -60,7 +60,7 @@ const getSeoSchema = () => ({
 export const staticContentTypes = {
   "page - Index": {
     header: {
-      title: "text",
+      title: "textarea",
       subtitle: "text",
     },
     contact: {
