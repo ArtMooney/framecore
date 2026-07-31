@@ -1,9 +1,22 @@
 <script setup>
 import { Shader, Glow, ChromaFlow } from "shaders/vue";
+
+const isActive = ref(true);
+
+onDeactivated(() => {
+  isActive.value = false;
+});
+
+onActivated(() => {
+  isActive.value = true;
+});
 </script>
 
 <template>
-  <Shader class="absolute inset-0 z-0 mx-[calc(-50vw+50%)] w-screen">
+  <Shader
+    v-if="isActive"
+    class="absolute inset-0 z-0 mx-[calc(-50vw+50%)] w-screen"
+  >
     <Glow :intensity="10" :size="0.1" :threshold="1" />
     <ChromaFlow
       baseColor="#0f172a"
@@ -19,9 +32,3 @@ import { Shader, Glow, ChromaFlow } from "shaders/vue";
     />
   </Shader>
 </template>
-
-<script>
-export default {
-  name: "ShadersBackground",
-};
-</script>

@@ -23,13 +23,9 @@ definePageMeta({
 
 <template>
   <div
-    class="relative flex grow flex-col items-center justify-center px-4 py-12 text-center"
+    class="flex grow flex-col items-center justify-center px-4 py-12 text-center"
   >
-    <ClientOnly>
-      <ShadersBackground />
-    </ClientOnly>
-
-    <div class="relative max-w-2xl">
+    <div class="max-w-2xl">
       <h1
         class="bg-linear-to-r from-teal-400 to-olive-400 bg-clip-text text-transparent"
       >
