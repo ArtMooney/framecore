@@ -11,7 +11,7 @@ import IconGrid from "~icons/glyphs/grid-sm-bold";
         <NuxtImg
           src="framecore-logo.svg"
           alt="company logo"
-          class="h-auto w-24 p-1 xl:w-52 xl:p-2"
+          class="h-auto w-24 p-1 sm:w-52 sm:p-2"
         />
       </router-link>
 
