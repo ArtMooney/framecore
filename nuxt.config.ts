@@ -17,13 +17,6 @@ export default defineNuxtConfig({
 
   nitro: {
     preset: "cloudflare_module",
-    experimental: {
-      tasks: true,
-    },
-    scheduledTasks: {
-      // Runs on the 1st and 27th of each month at 03:00 UTC (≈ every 26 days)
-      "0 3 1,27 * *": ["keep-files-alive"],
-    },
     prerender: {
       crawlLinks: false,
       ignore: [],
@@ -37,7 +30,6 @@ export default defineNuxtConfig({
     unsubscribeTo: process.env.NUXT_UNSUBSCRIBE_TO,
     userName: process.env.NUXT_USERNAME,
     userPass: process.env.NUXT_USERPASS,
-    torboxApiKey: process.env.NUXT_TORBOX_API_KEY,
 
     public: {
       userName: process.env.NUXT_PUBLIC_USERNAME,
