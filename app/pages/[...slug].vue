@@ -8,6 +8,8 @@ const props = defineProps({
   error: Object,
 });
 
+setResponseStatus(props.error?.statusCode || 404);
+
 const handleError = () => {
   clearError({ redirect: "/" });
 };
