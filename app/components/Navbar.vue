@@ -7,7 +7,7 @@
         <NuxtImg
           src="framecore-logo.svg"
           alt="company logo"
-          class="h-auto w-24 p-1 sm:w-52 sm:p-2"
+          class="h-auto w-32 p-1 sm:w-52 sm:p-2"
         />
       </router-link>
     </div>
