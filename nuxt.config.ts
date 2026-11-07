@@ -12,7 +12,7 @@ export default defineNuxtConfig({
   css: ["~/assets/css/main.css"],
 
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [...tailwindcss()],
   },
 
   nitro: {
@@ -26,6 +26,9 @@ export default defineNuxtConfig({
   runtimeConfig: {
     mailgunApiKey: process.env.NUXT_MAILGUN_API_KEY,
     emailFrom: process.env.NUXT_EMAIL_FROM,
+    cmsMailgunDomain: process.env.NUXT_CMS_MAILGUN_DOMAIN,
+    cmsMailgunBaseUrl:
+      process.env.NUXT_CMS_MAILGUN_BASE_URL,
     emailTo: process.env.NUXT_EMAIL_TO,
     unsubscribeTo: process.env.NUXT_UNSUBSCRIBE_TO,
     userName: process.env.NUXT_USERNAME,
@@ -45,7 +48,7 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "unplugin-icons/nuxt",
     "@pinia/nuxt",
-    "pinia-plugin-persistedstate/nuxt",
+    "framecore-cms",
   ],
 
   image: {

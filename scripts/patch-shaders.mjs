@@ -1,10 +1,10 @@
 import { readFile, writeFile } from "node:fs/promises";
 
-// Shaders 4.0.5 bundles TypeGPU. Its WGSL resolver registers builtins but
+// Shaders 4.0.7 bundles TypeGPU. Its WGSL resolver registers builtins but
 // misses varying fields such as in.uv, producing a spurious external-omitted warning.
 // Preserve those fields as input-struct references without changing generated WGSL.
 const sourcePath = new URL(
-  "./std-Bc4WfKLW.js",
+  "./std-DL2iZlL6.js",
   import.meta.resolve("shaders/core"),
 );
 const original =

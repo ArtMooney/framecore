@@ -1,3 +1,6 @@
+import * as schema from "./db/schema";
+export { schema };
+
 export const cmsTables = [
   {
     id: "static_content",
