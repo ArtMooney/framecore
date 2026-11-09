@@ -5,7 +5,7 @@ Development and deploy scripts in [package.json](./package.json).
 ## CMS
 
 The admin page, `/cms/*` API routes and CMS styles come from
-`framecore-cms`, pinned to GitHub tag `0.3.1`. Run `npm install` to install it;
+`framecore-cms`, pinned to GitHub tag `0.3.3`. Run `npm install` to install it;
 no sibling checkout or separate CMS build is needed for deployment.
 
 Site-specific tables remain in `server/db/schema.ts`, with migrations in this
@@ -42,6 +42,6 @@ site and restart `npm run dev`. Shared source and style changes are processed
 by the site's dev server.
 
 Restore the released dependency with
-`npm install "github:ArtMooney/framecore-cms#0.3.1"` and restart the dev server.
+`npm install "github:ArtMooney/framecore-cms#0.3.3"` and restart the dev server.
 To update the deployed CMS, install a new pushed tag and commit both
 `package.json` and `package-lock.json`.

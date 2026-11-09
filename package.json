@@ -35,7 +35,7 @@
         "@pinia/nuxt": "^1.0.3",
         "@tailwindcss/vite": "^4.3.5",
         "drizzle-orm": "^0.45.4",
-        "framecore-cms": "github:ArtMooney/framecore-cms#0.3.1",
+        "framecore-cms": "github:ArtMooney/framecore-cms#0.3.3",
         "nuxt": "^4.6.4",
         "pinia": "^4.1.0",
         "shaders": "4.0.7",
@@ -44,7 +44,7 @@
         "vue-router": "^5.4.0"
     },
     "devDependencies": {
-        "@cloudflare/workers-types": "^5.20261107.1",
+        "@cloudflare/workers-types": "^5.20261109.1",
         "@iconify/json": "^2.2.554",
         "better-sqlite3": "^13.0.3",
         "drizzle-kit": "^0.31.11",
@@ -52,6 +52,6 @@
         "prettier": "^3.9.10",
         "prettier-plugin-tailwindcss": "^0.8.1",
         "unplugin-icons": "^24.0.0",
-        "wrangler": "^4.158.0"
+        "wrangler": "^4.159.0"
     }
 }
